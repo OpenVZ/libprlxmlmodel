@@ -1,5 +1,5 @@
 #
-# build.pro
+# gen_header.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,7 +22,10 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
-include(../../Parallels.pri)
-include(../../Build/Options.pri)
-addSubdirs(subbuild, subbuild.pro)
+gen_header.dependency_type = TYPE_C
+gen_header.commands = $$SRC_LEVEL/Build/gen_header.py ${QMAKE_FILE_IN}
+gen_header.input = FILES2HEADERS
+gen_header.variable_out = HEADERS
+gen_header.output = ${QMAKE_FILE_IN}.h
+gen_header.depends += $$SRC_LEVEL/Build/gen_header.py
+QMAKE_EXTRA_COMPILERS += gen_header

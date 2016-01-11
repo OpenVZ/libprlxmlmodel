@@ -30,9 +30,6 @@
 #include "CHostHardwareInfo.h"
 #include <prlcommon/Logging/Logging.h>
 
-// By adding this interface we enable allocations tracing in the module
-#include "Interfaces/Debug.h"
-
 // Standard class constructor
 CHostHardwareInfo::CHostHardwareInfo()
  : m_lstFloppyDisks(*((QList<CHwGenericDevice* >* )&m_lstFloppyDisksBase[0]->m_lstFloppyDisk)),

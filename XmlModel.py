@@ -46,7 +46,7 @@ __full_file_path__ = os.path.split( os.path.abspath(__file__) )[0]
 if __full_file_path__ == '':
     __full_file_path__ = os.path.abspath( os.path.getcwd() )
 
-sys.path.append( os.path.join( __full_file_path__, '../Build' ) )
+sys.path.append( os.path.join( __full_file_path__, 'Build' ) )
 from BuildUtil import os_exec
 
 class SingleInstance:
@@ -107,9 +107,9 @@ def xsd2src(xsd_file, out_dir, flags = ''):
     if sys.platform == 'darwin':
         ext = '.app/Contents/MacOS/xsd2src'
 
-    xsd2src_bin = os.path.abspath( '../z-Build/Debug/xsd2src' + ext )
+    xsd2src_bin = os.path.abspath( 'z-Build/Debug/xsd2src' + ext )
     if not os.path.exists(xsd2src_bin):
-        xsd2src_bin = os.path.abspath( '../z-Build/Debug64/xsd2src' + ext )
+        xsd2src_bin = os.path.abspath( 'z-Build/Debug64/xsd2src' + ext )
 
     # do *not* use os_exec() below: it'll break if your path has spaces
     xsd2src = [xsd2src_bin,
@@ -133,8 +133,8 @@ def build_xsd2src():
         ext = '.exe'
 
     # Remove old binaries for both arch
-    safe_remove( os.path.abspath( '../../z-Build/Debug/xsd2src' + ext ) )
-    safe_remove( os.path.abspath( '../../z-Build/Debug64/xsd2src' + ext ) )
+    safe_remove( os.path.abspath( '../z-Build/Debug/xsd2src' + ext ) )
+    safe_remove( os.path.abspath( '../z-Build/Debug64/xsd2src' + ext ) )
 
     os.chdir('./Utils/xsd2src')
 

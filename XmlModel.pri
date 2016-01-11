@@ -27,4 +27,4 @@ PROJ_FILE = $$PWD/XmlModel.pro
 QTCONFIG = core network xml
 !include(../Build/qmake/staticlib.pri): error(include error)
 
-include(build/gen_xmlmodel_src.pri)
+include(Build/gen_xmlmodel_src.pri)

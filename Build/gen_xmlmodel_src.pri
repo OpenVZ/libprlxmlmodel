@@ -27,7 +27,7 @@ equals(TEMPLATE, lib) | equals(TEMPLATE, app) {
                QMAKE_EXTRA_TARGETS += gen_xmlmodel_src
                gen_xmlmodel_src.commands += \
                    $$PYTHON_INTERP \
-                       $$SRC_LEVEL/XmlModel/XmlModel.py
+                       $$SRC_LEVEL/XmlModel.py
 					gen_xmlmodel_src.commands += --qmake=$$quote(\"$$QMAKE_QMAKE\")
                win32: gen_xmlmodel_src.commands = $$replace(gen_xmlmodel_src.commands, /, \\)
        }

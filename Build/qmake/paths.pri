@@ -1,5 +1,5 @@
 #
-# XmlModel.pro
+# paths.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,23 +22,24 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
+defineTest(norm_path) {
+	_PWD = $$eval($$1)
+	unix {
+		_NORM_PATH = $$system(_OLDPWD=$PWD; cd $$_PWD; echo $PWD; cd $_OLDPWD)
+	}
+	win32 {
+		_NORM_PATH = $$replace(_PWD, /, \\\\)
+	}
+	eval($$1 = $$_NORM_PATH)
+	export($$1)
+}
 
-include(Build/Parallels.pri)
-include(Build/Options.pri)
+ROOT_LEVEL = $$PWD/../..
+norm_path(ROOT_LEVEL)
 
-# Project structure
-# -----------------
-#
-# XmlModel
-#  |
-#  +- gen_xmlmodel_src  (generates all source code and .pri-files)
-#  |   ^
-#  |   |
-#  +- build  (intermediate "empty" project to escape creating makefiles
-#      |      before actual source is generated)
-#      |
-#      +- subbuild  (main subproject where XmlModel lib is compiled)
+SRC_LEVEL = $$ROOT_LEVEL
 
-addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
-addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+ZBUILD_LEVEL = $$ROOT_LEVEL/z-Build
+
+LIBS_LEVEL = $$SRC_LEVEL/Libraries
+

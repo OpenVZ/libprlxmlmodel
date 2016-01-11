@@ -1,5 +1,5 @@
 #
-# XmlModel.pro
+# copy_file.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,23 +22,17 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
+build_pass: isEmpty(DESTDIR): error(DESTDIR variable must be set for this module)
 
-include(Build/Parallels.pri)
-include(Build/Options.pri)
+defineReplace(get_target_path) {
+	out_path = $$DESTDIR/$$basename(1)
+	return($$out_path)
+}
 
-# Project structure
-# -----------------
-#
-# XmlModel
-#  |
-#  +- gen_xmlmodel_src  (generates all source code and .pri-files)
-#  |   ^
-#  |   |
-#  +- build  (intermediate "empty" project to escape creating makefiles
-#      |      before actual source is generated)
-#      |
-#      +- subbuild  (main subproject where XmlModel lib is compiled)
-
-addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
-addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+copy_file.input = FILES2COPY
+copy_file.output_function = get_target_path
+copy_file.dependency_type = TYPE_C
+copy_file.commands = $(COPY_FILE) \"${QMAKE_FILE_IN}\" \"${QMAKE_FILE_OUT}\"
+copy_file.variable_out = PRE_TARGETDEPS
+copy_file.CONFIG += no_link
+QMAKE_EXTRA_COMPILERS += copy_file

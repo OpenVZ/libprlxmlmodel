@@ -31,10 +31,6 @@
 #include "CVmStartupOptions.h"
 #include <prlcommon/Interfaces/ParallelsDomModel.h>
 
-// By adding this interface we enable allocations tracing in the module
-#include "Interfaces/Debug.h"
-
-
 // Standard class constructor
 CVmStartupOptions::CVmStartupOptions()
 : m_lstBootDeviceList(*((QList<CVmBootDevice* >* )&m_lstBootingOrder[0]->m_lstBootDevice))

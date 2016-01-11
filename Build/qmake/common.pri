@@ -1,5 +1,5 @@
 #
-# XmlModel.pro
+# common.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,23 +22,29 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
+isEmpty(__COMMON_PRI__) {
+	__COMMON_PRI__ = 1
+	equals(TARGET, bin) | equals(TARGET, lib): error(TARGET has unacceptable name $$TARGET)
 
-include(Build/Parallels.pri)
-include(Build/Options.pri)
+	include(../Parallels.pri)
 
-# Project structure
-# -----------------
-#
-# XmlModel
-#  |
-#  +- gen_xmlmodel_src  (generates all source code and .pri-files)
-#  |   ^
-#  |   |
-#  +- build  (intermediate "empty" project to escape creating makefiles
-#      |      before actual source is generated)
-#      |
-#      +- subbuild  (main subproject where XmlModel lib is compiled)
+	# ROOT = $$PWD
+	# BUILD_DIR = $$ROOT/build
+	# LIB_BUILD_DIR = $$BUILD_DIR/lib
+	# PROJ_BUILD_DIR = $$BUILD_DIR/$$TARGET
+	BIN_BUILD_DIR = $$PRL_LIBS_PATH
+	LIB_BUILD_DIR = $$PRL_LIBS_PATH
 
-addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
-addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+	# equals(TEMPLATE, lib): DESTDIR = $$LIB_BUILD_DIR
+	# equals(TEMPLATE, app): DESTDIR = $$BIN_BUILD_DIR
+	# MOC_DIR = $$PROJ_BUILD_DIR/moc
+	# OBJECTS_DIR = $$PROJ_BUILD_DIR/obj
+	# RCC_DIR = $$PROJ_BUILD_DIR/rcc
+	QMAKE_LIBDIR += $$LIB_BUILD_DIR
+
+	static | staticlib {
+		CONFIG -= dll shared sharedlib plugin dylib
+	}
+
+	equals(TEMPLATE, subdirs) | equals(TEMPLATE, vcsubdirs): CONFIG += no_fixpath
+}

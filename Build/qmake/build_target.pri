@@ -1,5 +1,5 @@
 #
-# XmlModel.pro
+# build_target.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,23 +22,33 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
+x86_64 | linux-*-64 {
+	mkfile = Makefile64_$$TARGET
+} else {
+	mkfile = Makefile_$$TARGET
+}
 
-include(Build/Parallels.pri)
-include(Build/Options.pri)
+isEmpty(NON_SUBDIRS) {
+	# Will overwrite TEMPLATE in project file 
+	# if it is included via build.target
+	TEMPLATE = subdirs
 
-# Project structure
-# -----------------
-#
-# XmlModel
-#  |
-#  +- gen_xmlmodel_src  (generates all source code and .pri-files)
-#  |   ^
-#  |   |
-#  +- build  (intermediate "empty" project to escape creating makefiles
-#      |      before actual source is generated)
-#      |
-#      +- subbuild  (main subproject where XmlModel lib is compiled)
+	!contains(SUBDIRS, $$TARGET) {
+		message(---> $$TARGET)
+		SUBDIRS += $$TARGET
+		eval($${TARGET}.file = $$PROJ_PATH/build.target)
+		eval($${TARGET}.makefile = $$mkfile)
+	}
+}
 
-addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
-addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+_TARGET_IS_SET = 1
+
+!include(../Parallels.pri): error(Cannot include Parallels.pri)
+
+equals(TEMPLATE, subdirs) {
+	win32-msvc2013: wdkruntime: isEmpty(_msvcrt_compat_internal) {
+		include($$LIBS_LEVEL/msvcrt_compat/msvcrt_compat.pri)
+	}
+} else {
+	!isEmpty(NON_SUBDIRS): MAKEFILE = $$mkfile
+}

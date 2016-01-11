@@ -24,7 +24,7 @@
 
 TEMPLATE = app
 
-include(../../Parallels.pri)
+include(Parallels.pri)
 
 clear(HEADERS)
 clear(SOURCES)

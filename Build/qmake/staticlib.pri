@@ -1,5 +1,5 @@
 #
-# XmlModel.pro
+# staticlib.pri
 #
 # Copyright (C) 1999-2014 Parallels IP Holdings GmbH
 #
@@ -22,23 +22,16 @@
 # Schaffhausen, Switzerland.
 #
 
-TEMPLATE = subdirs
-
-include(Build/Parallels.pri)
-include(Build/Options.pri)
-
-# Project structure
-# -----------------
-#
-# XmlModel
-#  |
-#  +- gen_xmlmodel_src  (generates all source code and .pri-files)
-#  |   ^
-#  |   |
-#  +- build  (intermediate "empty" project to escape creating makefiles
-#      |      before actual source is generated)
-#      |
-#      +- subbuild  (main subproject where XmlModel lib is compiled)
-
-addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
-addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+#message(static::: $$SUBDIRS)
+CONFIG += _staticlib
+include(commonlib.pri)
+CONFIG -= _staticlib
+! isEqual(TEMPLATE, subdirs) {
+	isEqual(TEMPLATE, app) | contains(CONFIG, shared) | contains(CONFIG, dll) {
+		# will add pre_targetdeps only to apps and shared libs
+		# no pre_targetdeps for static libs!
+		unix: LIBTARGET_NAME = lib$${LIBTARGET}.a
+		win32: LIBTARGET_NAME = $${LIBTARGET}.lib
+		PRE_TARGETDEPS += $$LIB_BUILD_DIR/$$LIBTARGET_NAME
+	}
+}

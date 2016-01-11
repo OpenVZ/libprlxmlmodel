@@ -32,10 +32,6 @@
 #include <prlcommon/PrlDataSerializer/CPrlOpaqueTypeDataSerializer.h>
 #include <prlcommon/PrlDataSerializer/CPrlStringDataSerializer.h>
 
-// By adding this interface we enable allocations tracing in the module
-#include "Interfaces/Debug.h"
-
-
 namespace {
 /**
  * Auxiliary method that extracts parameter value from specified element

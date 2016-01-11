@@ -35,10 +35,6 @@
 #include <prlcommon/Logging/Logging.h>
 #include <prlcommon/PrlDataSerializer/CPrlStringDataSerializer.h>
 
-// By adding this interface we enable allocations tracing in the module
-#include "Interfaces/Debug.h"
-
-
 /**
  * @brief Standard class constructor.
  * @param parent
