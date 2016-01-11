@@ -49,6 +49,11 @@
 #define PRI_GEN_PRIFILES \
 	"GEN_PRIFILES += $$PWD/%1.pri\n"
 
+#define PRI_GEN_INSTALL_HEADERS \
+	"headers_%1.files = $${GEN_HEADERS}\n" \
+	"headers_%1.path = $${PREFIX}/include/prlxmlmodel/%1\n" \
+	"INSTALLS += headers_%1\n"
+
 // Header template defines
 
 #define HDR_CAPTION \

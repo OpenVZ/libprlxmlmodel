@@ -35,11 +35,11 @@ linux-*-64 {
 isEqual(TEMPLATE, subdirs) {
 	include($$SRC_LEVEL/Build/Options.pri)
 } else {
-	# Make 'debug' to be the last active configuration in non-build_pass run
+	# Make 'release' to be the last active configuration in non-build_pass run
 	# in order build as debug by default
 	!build_pass {
-		CONFIG -= debug
-		CONFIG += debug
+		CONFIG -= release
+		CONFIG += release
 	}
 	CONFIG += debug_and_release
 }

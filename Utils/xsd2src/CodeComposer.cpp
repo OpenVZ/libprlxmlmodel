@@ -535,6 +535,9 @@ bool CodeComposer::CompositeProjectIncludeFile(const QString& Path)
 	content += QString(PRI_GEN_PRIFILES).arg(m_qsXSDName);
 	content += '\n';
 
+	content += QString(PRI_GEN_INSTALL_HEADERS).arg(m_qsXSDName);
+	content += '\n';
+
 // Save project include file
 
 	QString pri_file_name = Path + '/' + m_qsXSDName + ".pri";

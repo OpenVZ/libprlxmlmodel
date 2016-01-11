@@ -23,13 +23,23 @@
 #
 
 TEMPLATE = lib
-CONFIG += staticlib
+CONFIG += sharedlib
+
+NON_SUBDIRS = yes
 
 include(../XmlModel.pri)
 
 INCLUDEPATH += ./ParallelsObjects
 
 linux-*:QMAKE_CXXFLAGS_RELEASE += -fno-strict-aliasing
+
+unix {
+	VERSION = $$cat(../Makefile.version)
+	VERSIONS = $$split(VERSION, ".")
+	VER_MAJ = $$member(VERSIONS,0)
+	VER_MIN = $$member(VERSIONS,1)
+	VER_PAT = $$member(VERSIONS,2)
+}
 
 include(XmlModelSrc.pri)
 QMAKE_CLEAN += $$GEN_HEADERS $$GEN_SOURCES $$GEN_PRIFILES

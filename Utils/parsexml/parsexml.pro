@@ -28,16 +28,16 @@ CONFIG += console
 QT += xml network
 QT -= gui
 
-LEVEL = ../../../..
-include($$LEVEL/Sources/Parallels.pri)
-include($$LEVEL/Sources/Build/Debug.pri)
-include($$LEVEL/Sources/XmlModel/XmlModel.pri)
-include($$LEVEL/Sources/Build/SharedQTWin.pri)
+LEVEL = ../../
+include($$LEVEL/Build/Parallels.pri)
+include($$LEVEL/Build/Debug.pri)
+include($$LEVEL/XmlModel.pri)
+include($$LEVEL/Build/SharedQTWin.pri)
 
 # ====================================================
 # Enter the location of genxml headers and libraries:
 
-PRL_SRC_DIR = $$LEVEL/Sources
+PRL_SRC_DIR = $$LEVEL
 PRL_BLD_DIR = $$LEVEL/z-Build
 
 XMLMODEL_INCLUDES = $$PRL_SRC_DIR \
@@ -65,12 +65,8 @@ INCLUDEPATH += $$PWD $$XMLMODEL_INCLUDES
 DEPENDPATH += $$PWD
 LIBS += $$XMLMODEL_LIBS
 
-include($$LEVEL/Sources/Libraries/PrlDataSerializer/PrlDataSerializer.pri)
-include($$LEVEL/Sources/Libraries/PrlCommonUtils/PrlCommonUtils.pri)
-include($$LEVEL/Sources/Libraries/Logging/Logging.pri)
-
 # Using our standard logging library in the module
-LIBS += -lStd
+LIBS += -lprlcommon
 
 SOURCES += main.cpp
 HEADERS +=
