@@ -5,6 +5,7 @@ Virtuozzo Xml Model Library contains a common for Virtuozzo prl\* projects
 object model - classes and their Xml representations.
 
 Major objects:
+
 - DispConfig - prl-disp-service configuration;
 - VmConfig - Virtual Environment configuration;
 - NetworkConfig - Virtual Networks configuration.
