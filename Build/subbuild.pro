@@ -26,6 +26,7 @@ TEMPLATE = lib
 CONFIG += sharedlib
 
 NON_SUBDIRS = yes
+_DONT_LINK_LIBTARGET = yes
 
 include(../XmlModel.pri)
 

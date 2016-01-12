@@ -57,20 +57,12 @@ isEqual(TEMPLATE, subdirs) | isEqual(TEMPLATE, vcsubdirs) {
 		!contains(SUBDIRS, $$LIBTARGET) {
 			message($$LIBTARGET $$PROJ_FILE -> $$TARGET)
 			SUBDIRS += $$LIBTARGET
-			_staticlib {
+			_staticlib | _sharedlib {
 				eval($${LIBTARGET}.file = $$PROJ_FILE)
 				x86_64: {
 					eval($${LIBTARGET}.makefile = Makefile64)
 				} else {
 					eval($${LIBTARGET}.makefile = Makefile)
-				}
-			}
-			_sharedlib {
-				eval($${LIBTARGET}.file = $$dirname(PROJ_FILE)/build.target)
-				x86_64: {
-					eval($${LIBTARGET}.makefile = Makefile64_$$LIBTARGET)
-				}else {
-					eval($${LIBTARGET}.makefile = Makefile_$$LIBTARGET)
 				}
 			}
 		}

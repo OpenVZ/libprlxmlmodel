@@ -267,8 +267,8 @@ unix {
 	QMAKE_CXXFLAGS += -frandom-seed=parallels
 }
 
-INCLUDEPATH += . $$SRC_LEVEL $$SRC_LEVEL/Interfaces $$SRC_LEVEL/SDK/Include
-DEPENDPATH += . $$SRC_LEVEL $$SRC_LEVEL/Interfaces $$SRC_LEVEL/Monitor/Interfaces
+INCLUDEPATH += . $$SRC_LEVEL
+DEPENDPATH += . $$SRC_LEVEL
 
 clear(_linkable)
 equals(TEMPLATE, app): _linkable = 1

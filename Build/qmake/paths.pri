@@ -40,6 +40,3 @@ norm_path(ROOT_LEVEL)
 SRC_LEVEL = $$ROOT_LEVEL
 
 ZBUILD_LEVEL = $$ROOT_LEVEL/z-Build
-
-LIBS_LEVEL = $$SRC_LEVEL/Libraries
-

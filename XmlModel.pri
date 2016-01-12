@@ -27,9 +27,7 @@ PROJ_FILE = $$PWD/XmlModel.pro
 QTCONFIG = core network xml
 LIBS += -lprlcommon -lboost_filesystem -lboost_system
 
-_DONT_LINK_LIBTARGET = yes
-
-!include(../Build/qmake/commonlib.pri): error(include error)
+!include(Build/qmake/sharedlib.pri): error(include error)
 
 target.path = $${PREFIX}/lib64
 INSTALLS += target
