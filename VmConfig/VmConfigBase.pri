@@ -38,4 +38,8 @@ SOURCES += \
 	$$PWD/CVmDevice.cpp \
 	$$PWD/CVmStorageDevice.cpp
 
+headers_VmConfigBase.files = $${HEADERS}
+headers_VmConfigBase.path = $${PREFIX}/include/prlxmlmodel/VmConfig
+INSTALLS += headers_VmConfigBase
+
 include(VmConfig.pri)

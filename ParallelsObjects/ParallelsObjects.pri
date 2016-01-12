@@ -35,3 +35,8 @@ SOURCES += $$PWD/CBaseNode.cpp
 SOURCES += $$PWD/CXmlModelHelper.cpp \
            $$PWD/CVmProfileHelper.cpp
 }
+
+headers_ParallelsObjects.files = $${HEADERS}
+headers_ParallelsObjects.path = $${PREFIX}/include/prlxmlmodel/ParallelsObjects
+INSTALLS += headers_ParallelsObjects
+

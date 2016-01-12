@@ -26,3 +26,5 @@ HEADERS += $$PWD/CVmDispatcherDump.h
 SOURCES += $$PWD/CVmDispatcherDump.cpp
 
 include(VmDirectories.pri)
+
+headers_VmDirectories.path = $${PREFIX}/include/prlxmlmodel/VmDirectory

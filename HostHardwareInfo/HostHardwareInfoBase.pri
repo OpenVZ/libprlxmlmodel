@@ -32,5 +32,11 @@ SOURCES += \
 	$$PWD/CHwGenericDevice.cpp \
 	$$PWD/CHostHardwareInfo.cpp
 
+headers_HostHardwareInfoBase.files = $${HEADERS}
+headers_HostHardwareInfoBase.path = $${PREFIX}/include/prlxmlmodel/HostHardwareInfo
+INSTALLS += headers_HostHardwareInfoBase
+
 include(HostHardwareInfo.pri)
 include(FileSystemInfo.pri)
+
+headers_FileSystemInfo.path = $${PREFIX}/include/prlxmlmodel/HostHardwareInfo

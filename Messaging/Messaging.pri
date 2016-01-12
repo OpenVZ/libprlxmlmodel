@@ -35,3 +35,10 @@ SOURCES += \
 	$$PWD/CVmBinaryEventParameter.cpp
 
 include(VmEvent.pri)
+
+headers_VmEvent.path = $${PREFIX}/include/prlxmlmodel/Messaging
+
+headers_Messaging.files = $${HEADERS}
+headers_Messaging.path = $${PREFIX}/include/prlxmlmodel/Messaging
+INSTALLS += headers_Messaging
+
