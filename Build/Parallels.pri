@@ -180,6 +180,13 @@ count(enable_log4cxx, 1) {
      }
 }
 
+# Pick up build dependencies from non-system locations
+!isEmpty(ENABLE_LOCAL_DEPS) {
+    QMAKE_INCDIR += $$LOCAL_DEPS_INCLUDE
+    QMAKE_LIBDIR += $$LOCAL_DEPS_LIBS
+    QMAKE_LFLAGS += -Wl,-rpath-link=$$LOCAL_DEPS_LIBS
+}
+
 # To get rid of .manifest files for our generated binaries
 # We're using option embed_manifest_xxx that is why we're limited
 # to the version 4.1.2+ of Qt libraries
