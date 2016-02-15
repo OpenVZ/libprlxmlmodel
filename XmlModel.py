@@ -205,6 +205,7 @@ def main():
         ('InterfaceInfo', 'InterfaceInfo', '', ''),
         ('CpuFeatures', 'CpuFeatures', '--properties --merge', ''),
         ('VtInfo', 'VtInfo', '', ''),
+        ('BackupActivity', 'BackupActivity', '', ''),
     )
 
     schemas2build = []
