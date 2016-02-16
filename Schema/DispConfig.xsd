@@ -938,6 +938,7 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			</xs:element>
 			<xs:element name="Timeout" type="xs:integer" default="3600" minOccurs="0"/>
 			<xs:element name="TmpDir" type="xs:string" minOccurs="0"/>
+			<xs:element name="Sandbox" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="MountPreferencesType">
