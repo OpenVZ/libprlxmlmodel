@@ -42,3 +42,5 @@ include(Build/Options.pri)
 
 addSubdirs(gen_xmlmodel_src, $$PWD/Build/gen_xmlmodel_src.pro)
 addSubdirs(build, $$PWD/Build/build.pro, gen_xmlmodel_src)
+
+QMAKE_DISTCLEAN += $${PWD}/Utils/xsd2src/Makefile*
