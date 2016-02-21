@@ -66,7 +66,7 @@
 			<xs:element name="State" type="xs:string" />
 			<xs:element name="Device">
 				<xs:annotation>
-					<xs:documentation>class=CVmHardDisk;extern=prlxmlmodel/VmConfig/CVmHardDisk.h;single_fixed=on;</xs:documentation>
+					<xs:documentation>class=CVmHardDisk;extern=../VmConfig/CVmHardDisk.h;single_fixed=on;</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
