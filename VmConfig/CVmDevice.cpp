@@ -62,6 +62,7 @@ CVmDevice::CVmDevice( const CVmDevice& rhs )
 	setUserFriendlyName( rhs.getUserFriendlyName() );
 	setRemote( rhs.isRemote() );
 	setDescription( rhs.getDescription() );
+	setAlias( rhs.getAlias() );
 }
 
 void CVmDevice::Init()
@@ -90,6 +91,7 @@ CVmDevice& CVmDevice::operator=( const CVmDevice& rhs )
 		setUserFriendlyName( rhs.getUserFriendlyName() );
 		setRemote( rhs.isRemote() );
 		setDescription( rhs.getDescription() );
+		setAlias( rhs.getAlias() );
 	}
 
 	return *this;
@@ -298,6 +300,26 @@ void CVmDevice::slotChangeDescription(QString value)
 QString CVmDevice::getDescription() const
 {
 	return m_qsDeviceDescription;
+}
+
+void CVmDevice::setAlias(QString value)
+{
+	bool bValueChanged = (m_qsAlias != value);
+	m_qsAlias = value;
+	if (isSignalsEnabled() && bValueChanged)
+	{
+		emit signalAliasChanged(value, getObjectId());
+	}
+}
+
+void CVmDevice::slotChangeAlias(QString value)
+{
+	setAlias(value);
+}
+
+QString CVmDevice::getAlias() const
+{
+	return m_qsAlias;
 }
 
 //////////////////////////////////////////////////////////////////////////////
