@@ -101,6 +101,9 @@ public:
 	void setDescription(QString value = QString());
 	QString getDescription() const;
 
+	void setAlias(QString value = QString());
+	QString getAlias() const;
+
 	void setRelativeSystemName(const QString& strVmDirectory);
 	QString RevertToInitialSystemName(const QString& strVmDirectory);
 
@@ -123,6 +126,7 @@ protected:
 	QString						m_qsUserFriendlyName;
 	bool						m_bRemote;
 	QString						m_qsDeviceDescription;
+	QString						m_qsAlias;
 
 signals:
 
@@ -136,6 +140,7 @@ signals:
 	void signalUserFriendlyNameChanged(QString value, QString object_id = QString());
 	void signalRemoteChanged(bool value, QString object_id = QString());
 	void signalDescriptionChanged(QString value, QString object_id = QString());
+	void signalAliasChanged(QString value, QString object_id = QString());
 
 private slots:
 
@@ -149,6 +154,7 @@ private slots:
 	void slotChangeUserFriendlyName(QString value);
 	void slotChangeRemote(bool value);
 	void slotChangeDescription(QString value);
+	void slotChangeAlias(QString value);
 
 };
 
