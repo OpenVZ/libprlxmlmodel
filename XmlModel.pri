@@ -25,7 +25,7 @@
 LIBTARGET = prl_xml_model
 PROJ_FILE = $$PWD/XmlModel.pro
 QTCONFIG = core network xml
-LIBS += -lprlcommon -lboost_filesystem -lboost_system
+LIBS += -lprlcommon
 
 !include(Build/qmake/sharedlib.pri): error(include error)
 
@@ -33,3 +33,4 @@ target.path = $${PREFIX}/lib64
 INSTALLS += target
 
 include(Build/gen_xmlmodel_src.pri)
+include(Build/boost.pri)
