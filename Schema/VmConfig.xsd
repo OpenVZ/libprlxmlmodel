@@ -2668,7 +2668,7 @@ bool CVmSerialPort::operator==( const CVmSerialPort&amp; cVmSerialPort)
 			<xs:element name="SocketMode" type="xs:integer" default="PSP_SERIAL_SOCKET_SERVER" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>type=PRL_SERIAL_PORT_SOCKET_OPERATION_MODE;</xs:documentation>
-					<xs:documentation source="Tag condition">condition:(PVE::SerialPortEmulatedType )getEmulatedType() == PVE::SerialSocket</xs:documentation>
+					<xs:documentation source="Tag condition">condition:(PVE::SerialPortEmulatedType)getEmulatedType() == PVE::SerialSocket || (PVE::SerialPortEmulatedType)getEmulatedType() == PVE::SerialTCP</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OperateAtRealSpeed" type="xs:boolean" minOccurs="0"/>
