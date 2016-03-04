@@ -19,6 +19,7 @@
 					</xs:element>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="GlobalCpuLimit" type="xs:boolean" default="true"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
