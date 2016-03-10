@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="BackupActivity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Uuid" type="xs:string"/>
+				<xs:element name="Escort" type="EscortType">
+					<xs:documentation>class=BackupEscort</xs:documentation>
+				</xs:element>
+				<xs:element name="Snapshot" type="SnapshotType">
+					<xs:documentation>class=BackupSnapshot</xs:documentation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EscortType">
+		<xs:sequence>
+			<xs:element name="Files">
+				<xs:annotation>
+					<xs:documentation>single_fixed=on;class=EscortFilesList;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Component" type="EscortComponentType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>class=EscortComponent;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Folders">
+				<xs:annotation>
+					<xs:documentation>single_fixed=on;class=EscortFoldersList;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Component" type="EscortComponentType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>class=EscortComponent;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SnapshotType">
+		<xs:sequence>
+			<xs:element name="Uuid" type="xs:string"/>
+                        <xs:element name="SnapshotComponents" type="SnapshotComponentType" block="restriction" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>list=SnapshotComponents;class=SnapshotComponent</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscortComponentType">
+		<xs:sequence>
+			<xs:element name="Source" type="xs:string" />
+			<xs:element name="Target" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SnapshotComponentType">
+		<xs:sequence>
+			<xs:element name="State" type="xs:string" />
+			<xs:element name="Device">
+				<xs:annotation>
+					<xs:documentation>class=CVmHardDisk;extern=../VmConfig/CVmHardDisk.h;single_fixed=on;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="external"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

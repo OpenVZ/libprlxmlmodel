@@ -13,6 +13,7 @@
 							<xs:sequence>
 								<xs:element name="MaxVCpu" type="xs:integer" default="0"/>
 								<xs:element name="DefaultPeriod" type="xs:integer" default="100000"/>
+								<xs:element name="Mhz" type="xs:integer" default="0"/>
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>

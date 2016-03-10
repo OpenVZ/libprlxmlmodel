@@ -1398,6 +1398,12 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 			<xs:element name="HostMemQuotaPriority" type="xs:integer" default="XML_DEFAULT_QUOTA_PRIORITY" minOccurs="0"/>
 			<xs:element name="AutoQuota" type="xs:boolean" default="true" minOccurs="0"/>
 			<xs:element name="MaxBalloonSize" type="xs:integer" default="70" minOccurs="0"/>
+			<xs:element name="MemGuarantee" type="xs:integer" default="0" minOccurs="0"/>
+			<xs:element name="MemGuaranteeType" type="xs:integer" default="PRL_MEMGUARANTEE_AUTO" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>type=PRL_MEMGUARANTEE_TYPE;</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Mixer" type="xs:string"/>
@@ -2662,7 +2668,7 @@ bool CVmSerialPort::operator==( const CVmSerialPort&amp; cVmSerialPort)
 			<xs:element name="SocketMode" type="xs:integer" default="PSP_SERIAL_SOCKET_SERVER" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>type=PRL_SERIAL_PORT_SOCKET_OPERATION_MODE;</xs:documentation>
-					<xs:documentation source="Tag condition">condition:(PVE::SerialPortEmulatedType )getEmulatedType() == PVE::SerialSocket</xs:documentation>
+					<xs:documentation source="Tag condition">condition:(PVE::SerialPortEmulatedType)getEmulatedType() == PVE::SerialSocket || (PVE::SerialPortEmulatedType)getEmulatedType() == PVE::SerialTCP</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OperateAtRealSpeed" type="xs:boolean" minOccurs="0"/>
