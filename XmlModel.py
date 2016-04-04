@@ -109,7 +109,7 @@ def xsd2src(xsd_file, out_dir, flags = ''):
 
     xsd2src_bin = os.path.abspath( 'z-Build/Release/xsd2src' + ext )
     if not os.path.exists(xsd2src_bin):
-        xsd2src_bin = os.path.abspath( 'z-Build/Release/xsd2src' + ext )
+        xsd2src_bin = os.path.abspath( 'z-Build/Release64/xsd2src' + ext )
 
     # do *not* use os_exec() below: it'll break if your path has spaces
     xsd2src = [xsd2src_bin,

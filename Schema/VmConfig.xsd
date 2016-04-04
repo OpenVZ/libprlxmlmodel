@@ -4038,7 +4038,7 @@ bool CNetPktFilter::operator==( const CNetPktFilter&amp; cNetPktFilter)
 					<xs:documentation>When TRUE, the guest is allowed to do sends only from addresses in the adapter NetAdrresses list</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MAC" type="xs:string">
+			<xs:element name="MAC" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>method=MacAddress;no_save=on</xs:documentation>
 				</xs:annotation>
