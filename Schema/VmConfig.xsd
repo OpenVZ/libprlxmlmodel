@@ -833,6 +833,7 @@ void CVmCpu::getCpuLimitData(PRL_CPULIMIT_DATA_PTR cpulimit)
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="CpuMask" type="xs:string" minOccurs="0"/>
+						<xs:element name="NodeMask" type="xs:string" minOccurs="0"/>
 						<xs:element name="VirtualizedHV" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="VirtualizePMU" type="xs:boolean" default="false" minOccurs="0"/>
 					</xs:sequence>
