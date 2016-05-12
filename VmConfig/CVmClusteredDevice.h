@@ -67,7 +67,7 @@ public:
 	PVE::DevicePassthroughMode getPassthrough() const;
 
 	// Set sub type
-	void setSubType(unsigned int value = PCD_BUSLOGIC);
+	void setSubType(unsigned int value = PCD_VIRTIO_SCSI);
 	// Get sub type
 	PRL_CLUSTERED_DEVICE_SUBTYPE getSubType() const;
 
