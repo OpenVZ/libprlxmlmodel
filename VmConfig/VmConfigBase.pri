@@ -22,13 +22,15 @@
 # Schaffhausen, Switzerland.
 #
 
-HEADERS += \
+DIR_HEADERS = \
 	$$PWD/CVmPort.h \
 	$$PWD/CVmMassStorageDevice.h \
 	$$PWD/CVmClusteredDevice.h \
 	$$PWD/CVmStartupOptions.h \
 	$$PWD/CVmDevice.h \
 	$$PWD/CVmStorageDevice.h
+
+HEADERS += $${DIR_HEADERS}
 
 SOURCES += \
 	$$PWD/CVmPort.cpp \
@@ -38,7 +40,7 @@ SOURCES += \
 	$$PWD/CVmDevice.cpp \
 	$$PWD/CVmStorageDevice.cpp
 
-headers_VmConfigBase.files = $${HEADERS}
+headers_VmConfigBase.files = $${DIR_HEADERS}
 headers_VmConfigBase.path = $${PREFIX}/include/prlxmlmodel/VmConfig
 INSTALLS += headers_VmConfigBase
 

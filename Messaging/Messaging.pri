@@ -22,11 +22,13 @@
 # Schaffhausen, Switzerland.
 #
 
-HEADERS += \
+DIR_HEADERS = \
 	$$PWD/CResult.h \
 	$$PWD/CVmEvent.h \
 	$$PWD/CVmEventParameterList.h \
 	$$PWD/CVmBinaryEventParameter.h
+
+HEADERS += $${DIR_HEADERS}
 
 SOURCES += \
 	$$PWD/CResult.cpp \
@@ -38,7 +40,7 @@ include(VmEvent.pri)
 
 headers_VmEvent.path = $${PREFIX}/include/prlxmlmodel/Messaging
 
-headers_Messaging.files = $${HEADERS}
+headers_Messaging.files = $${DIR_HEADERS}
 headers_Messaging.path = $${PREFIX}/include/prlxmlmodel/Messaging
 INSTALLS += headers_Messaging
 

@@ -22,12 +22,14 @@
 # Schaffhausen, Switzerland.
 #
 
-HEADERS += $$PWD/CBaseNode.h
+DIR_HEADERS = $$PWD/CBaseNode.h
 
 !mobilePlatform {
-HEADERS += $$PWD/CXmlModelHelper.h \
+DIR_HEADERS += $$PWD/CXmlModelHelper.h \
            $$PWD/CVmProfileHelper.h
 }
+
+HEADERS += $${DIR_HEADERS}
 
 SOURCES += $$PWD/CBaseNode.cpp
 
@@ -36,7 +38,7 @@ SOURCES += $$PWD/CXmlModelHelper.cpp \
            $$PWD/CVmProfileHelper.cpp
 }
 
-headers_ParallelsObjects.files = $${HEADERS}
+headers_ParallelsObjects.files = $${DIR_HEADERS}
 headers_ParallelsObjects.path = $${PREFIX}/include/prlxmlmodel/ParallelsObjects
 INSTALLS += headers_ParallelsObjects
 

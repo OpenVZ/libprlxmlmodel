@@ -22,17 +22,19 @@
 # Schaffhausen, Switzerland.
 #
 
-HEADERS += \
+DIR_HEADERS = \
 	$$PWD/CSystemStatistics.h \
 	$$PWD/CHostHardwareInfo.h \
 	$$PWD/CHwGenericDevice.h
+
+HEADERS += $${DIR_HEADERS}
 
 SOURCES += \
 	$$PWD/CSystemStatistics.cpp \
 	$$PWD/CHwGenericDevice.cpp \
 	$$PWD/CHostHardwareInfo.cpp
 
-headers_HostHardwareInfoBase.files = $${HEADERS}
+headers_HostHardwareInfoBase.files = $${DIR_HEADERS}
 headers_HostHardwareInfoBase.path = $${PREFIX}/include/prlxmlmodel/HostHardwareInfo
 INSTALLS += headers_HostHardwareInfoBase
 
