@@ -518,11 +518,12 @@ bool CodeComposer::CompositeProjectIncludeFile(const QString& Path)
 
 	content += QString(PRI_CAPTION).arg(m_qsXSDName);
 
-	content += PRI_GEN_HEADERS;
+	content += PRI_GEN_DIR_HEADERS;
 	foreach(QString qsHeaderFile, m_lstHeaderFiles)
 	{
 		content += QString(PRI_FILE).arg(qsHeaderFile);
 	}
+	content += PRI_GEN_HEADERS;
 	content += '\n';
 
 	content += PRI_GEN_SOURCES;

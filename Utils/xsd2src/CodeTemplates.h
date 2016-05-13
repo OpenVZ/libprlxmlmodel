@@ -40,8 +40,10 @@
 	"#//\n" \
 	"#///////////////////////////////////////////////////////////////////////////////\n\n"
 
+#define PRI_GEN_DIR_HEADERS \
+	"GEN_DIR_HEADERS = \\\n"
 #define PRI_GEN_HEADERS \
-	"GEN_HEADERS += \\\n"
+	"\nGEN_HEADERS += $${GEN_DIR_HEADERS}\n"
 #define PRI_GEN_SOURCES \
 	"GEN_SOURCES += \\\n"
 #define PRI_FILE \
@@ -50,7 +52,7 @@
 	"GEN_PRIFILES += $$PWD/%1.pri\n"
 
 #define PRI_GEN_INSTALL_HEADERS \
-	"headers_%1.files = $${GEN_HEADERS}\n" \
+	"headers_%1.files = $${GEN_DIR_HEADERS}\n" \
 	"headers_%1.path = $${PREFIX}/include/prlxmlmodel/%1\n" \
 	"INSTALLS += headers_%1\n"
 
