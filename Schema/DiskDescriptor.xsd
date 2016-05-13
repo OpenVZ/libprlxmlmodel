@@ -118,6 +118,7 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:any minOccurs="0"/>
+			<xs:element name="MigrationInstanceId" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
