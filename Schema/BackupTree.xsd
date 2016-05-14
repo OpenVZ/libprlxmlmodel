@@ -16,6 +16,7 @@
 			</xs:element>
 			<xs:element name="Uuid" type="xs:string"/>
 			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Version" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="BackupItem" type="BackupItemType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
