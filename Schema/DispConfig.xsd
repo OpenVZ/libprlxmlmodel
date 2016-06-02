@@ -515,6 +515,7 @@ public:
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="MaxVmMemory" type="xs:integer"/>
+	<xs:element name="MaxVCpu" type="xs:integer" default="0" minOccurs="0"/>
 	<xs:complexType name="MemoryPreferencesType">
 		<xs:annotation>
 			<xs:documentation>class=CDispMemoryPreferences;</xs:documentation>
@@ -550,6 +551,7 @@ public:
 		<xs:annotation>
 			<xs:documentation>class=CDispCpuPreferences;</xs:documentation>
 		</xs:annotation>
+		<xs:element ref="MaxVCpu"/>
 		<xs:sequence>
 			<xs:element name="FEATURES_MASK" type="xs:integer" minOccurs="0"/>
 			<xs:element name="EXT_FEATURES_MASK" type="xs:integer" minOccurs="0"/>
