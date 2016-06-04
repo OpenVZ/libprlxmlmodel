@@ -550,6 +550,23 @@ public:
 	<xs:complexType name="CpuPreferencesType">
 		<xs:annotation>
 			<xs:documentation>class=CDispCpuPreferences;</xs:documentation>
+			<xs:documentation source="Feartures setter">header_fragment:
+    void setFeatures(const CDispCpuPreferences&amp; src_);
+			</xs:documentation>
+			<xs:documentation source="Constructor setter impl">unit_fragment:
+void CDispCpuPreferences::setFeatures(const CDispCpuPreferences&amp; src_)
+{
+	setFEATURES_MASK(src_.getFEATURES_MASK());
+	setEXT_FEATURES_MASK(src_.getEXT_FEATURES_MASK());
+	setEXT_80000001_ECX_MASK(src_.getEXT_80000001_ECX_MASK());
+	setEXT_80000001_EDX_MASK(src_.getEXT_80000001_EDX_MASK());
+	setEXT_80000007_EDX_MASK(src_.getEXT_80000007_EDX_MASK());
+	setEXT_80000008_EAX(src_.getEXT_80000008_EAX());
+	setEXT_00000007_EBX_MASK(src_.getEXT_00000007_EBX_MASK());
+	setEXT_0000000D_EAX_MASK(src_.getEXT_0000000D_EAX_MASK());
+	setCpuFeaturesMaskValid(src_.isCpuFeaturesMaskValid());
+}
+			</xs:documentation>
 		</xs:annotation>
 		<xs:element ref="MaxVCpu"/>
 		<xs:sequence>
