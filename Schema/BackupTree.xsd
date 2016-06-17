@@ -58,6 +58,7 @@
 			<xs:element name="TibFileList" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="OriginalSize" type="xs:unsignedLong" default="0" minOccurs="0"/>
 			<xs:element name="BundlePermissions" type="xs:integer" default="0" minOccurs="0"/>
+			<xs:element name="Flags" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="BackupDisks" type="BackupDisksType">
 				<xs:annotation>
 					<xs:documentation>single_fixed=on;</xs:documentation>
