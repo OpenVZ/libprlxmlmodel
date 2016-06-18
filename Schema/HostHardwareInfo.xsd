@@ -89,7 +89,8 @@ CHwHardDisk::CHwHardDisk(QString dev_name, qint64 dev_size, unsigned int type,
 	m_ctSize = dev_size;
 	m_uiType = type;
 	m_uiIndex = index;
-
+	m_bRemovable = false;
+	m_bExternal = false;
 }
 </xs:documentation>
 			<xs:documentation source="addPartition">header_fragment:
