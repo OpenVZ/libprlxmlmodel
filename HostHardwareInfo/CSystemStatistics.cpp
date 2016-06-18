@@ -435,6 +435,7 @@ CNetClassStatistics::CNetClassStatistics()
 /************************************Uptime statisitcs element implementation*********************/
 
 CUptimeStatistics::CUptimeStatistics(QDomElement *parent_element)
+	: m_uiOsUptime(0), m_uiDispatcherUptime(0)
 {
 	readXml(parent_element);
 }
