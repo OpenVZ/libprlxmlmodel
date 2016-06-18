@@ -86,6 +86,7 @@ QDomElement CBaseStatisticsElement::createClassElement(QDomDocument* parent_doc)
 /************************************CPU statisitcs element implementation*********************/
 
 CCpuStatistics::CCpuStatistics(QDomElement *parent_element)
+	: m_uiPercentsUsage(0), m_uiTotalTime(0), m_uiUserTime(0), m_uiSystemTime(0)
 {
 	readXml(parent_element);
 }
@@ -174,6 +175,7 @@ void CCpuStatistics::Deserialize(QDataStream &_stream)
 /************************************Disk statisitcs element implementation*********************/
 
 CDiskStatistics::CDiskStatistics(QDomElement *parent_element)
+	: m_uiUsageDiskSpace(0), m_uiFreeDiskSpace(0), m_uiReadBytesTotal(0), m_uiWriteBytesTotal(0)
 {
 	readXml(parent_element);
 }
@@ -325,6 +327,7 @@ QString CDiskPartStatistics::getConcreteClassElementName()
 /************************************Memory base statisitcs element implementation*********************/
 
 CBaseMemStatistics::CBaseMemStatistics(QDomElement *parent_element)
+	: m_uiTotalSize(0), m_uiUsageSize(0), m_uiFreeSize(0), m_uiRealSize(0)
 {
 	readXml(parent_element);
 }
@@ -500,6 +503,9 @@ void CUptimeStatistics::Deserialize(QDataStream &_stream)
 /************************************Process statisitcs element implementation*********************/
 
 CProcInfoStatistics::CProcInfoStatistics(QDomElement *parent_element)
+	: m_uiProcId(0), m_uiTotalMemUsage(0), m_uiRealMemUsage(0), m_uiVirtualMemUsage(0),
+	m_uiStartTime(0), m_uiTotalTime(0), m_uiUserTime(0), m_uiSystemTime(0), m_uiState(PPS_PROC_IDLE),
+	m_uiPercentsUsage(0)
 {
 	readXml(parent_element);
 }
@@ -708,6 +714,7 @@ void CProcInfoStatistics::Deserialize(QDataStream &_stream)
 /************************************Network interface statisitcs element implementation*********************/
 
 CNetIfaceStatistics::CNetIfaceStatistics(QDomElement *parent_element)
+	: m_uiInDataSize(0), m_uiOutDataSize(0), m_uiInPkgsCount(0), m_uiOutPkgsCount(0)
 {
 	readXml(parent_element);
 }
@@ -809,6 +816,7 @@ void CNetIfaceStatistics::Deserialize(QDataStream &_stream)
 /************************************Users sessions statisitcs element implementation*********************/
 
 CUserStatistics::CUserStatistics(QDomElement *parent_element)
+	: m_uiSessionTime(0)
 {
 	readXml(parent_element);
 }
@@ -898,7 +906,8 @@ void CUserStatistics::Deserialize(QDataStream &_stream)
 /************************************System statisitcs implementation**************************/
 
 CSystemStatistics::CSystemStatistics()
-: m_pMemoryStatistics(new CMemoryStatistics), m_pSwapStatistics(new CSwapStatistics),
+: m_uiRcInit(PRL_ERR_SUCCESS), m_iErrLine(-1), m_iErrCol(-1), m_iParseRc(SystemStatisticsParser::RcSuccess),
+  m_pMemoryStatistics(new CMemoryStatistics), m_pSwapStatistics(new CSwapStatistics),
 	m_pUptimeStatistics(new CUptimeStatistics)
 {}
 
@@ -918,6 +927,9 @@ CSystemStatistics::CSystemStatistics(const CSystemStatistics &_obj)
 		m_lstNetIfacesStatistics.append(new CNetIfaceStatistics(*pNetIfaceStat));
 	foreach(CUserStatistics *pUserStat, _obj.m_lstUsersStatistics)
 		m_lstUsersStatistics.append(new CUserStatistics(*pUserStat));
+	m_uiRcInit = _obj.m_uiRcInit;
+	m_iErrLine = _obj.m_iErrLine;
+	m_iParseRc = _obj.m_iParseRc;
 }
 
 CSystemStatistics::CSystemStatistics(const QString &source_string)
