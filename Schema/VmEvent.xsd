@@ -48,6 +48,9 @@ CVmEventParameter::CVmEventParameter(PVE::ParamFieldDataType param_type,
 {
 	cleanupClassProperties();
 
+	m_bIsList = false;
+	m_uiEventParameterClassType = BaseType;
+
 //	if( isCorrectParamType( param_type ) )
 		setParamType( param_type );
 //	else
@@ -55,12 +58,10 @@ CVmEventParameter::CVmEventParameter(PVE::ParamFieldDataType param_type,
 	
 	m_qsName = param_name;
 
-	if( getParamType() == PVE::CData )
+	if(getParamType() == PVE::CData)
 		m_baData = param_value.toUtf8();
-    else if (!m_lstValues.isEmpty())
-    {
-           setParamValue(param_value);
-    }
+	else if (!m_lstValues.isEmpty())
+		setParamValue(param_value);
 }
 </xs:documentation>
 			<xs:documentation source="isList">header_fragment:
