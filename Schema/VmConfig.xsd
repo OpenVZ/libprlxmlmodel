@@ -2011,7 +2011,7 @@ bool CVmConfiguration::hasEnabledGenericPciDevices() const
 		if( pVmDev-&gt;getEnabled() != PVE::DeviceEnabled )
 			continue;
 
-		if( (PRL_VM_DEV_EMULATION_TYPE )pVmDev-&gt;getEmulatedType() != PDT_USE_DIRECT_ASSIGN )
+		if(pVmDev-&gt;getEmulatedType() != PNA_DIRECT_ASSIGN)
 			continue;
 
 		return true;
