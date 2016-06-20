@@ -610,6 +610,9 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 	setKey( key );
 	setUser( user );
 	setCompany( company );
+	setLicenseConfirmed(false);
+	setLicenseActivationStatus(PVE::LAS_UNKNOWN);
+	setRegistrationStatus(COMMON_NOT_INITIALIZED_INT_VALUE);
 }
 </xs:documentation>
 						<xs:documentation source="Tag condition">condition:false</xs:documentation>
