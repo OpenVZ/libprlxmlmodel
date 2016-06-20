@@ -202,7 +202,6 @@ def main():
         ('DiskDescriptor', 'DiskDescriptor', '', ''),
         ('VmInfo', 'VmInfo', '', 'pmobile'),
         ('VmDataStatistic', 'VmDataStatistic', '--properties', ''),
-        ('InterfaceInfo', 'InterfaceInfo', '', ''),
         ('CpuFeatures', 'CpuFeatures', '--properties --merge', ''),
         ('VtInfo', 'VtInfo', '', ''),
         ('BackupActivity', 'BackupActivity', '', ''),
