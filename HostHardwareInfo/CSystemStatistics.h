@@ -141,7 +141,12 @@ public:
 
 public:
 	/** Class default constructor */
-	CDiskStatistics() {cleanupClassProperties();}
+	CDiskStatistics():
+		 m_uiUsageDiskSpace(0), m_uiFreeDiskSpace(0),
+		 m_uiReadBytesTotal(0), m_uiWriteBytesTotal(0)
+	{
+		cleanupClassProperties();
+	}
 	/** Class constructor. Initializes class data by specified XML element */
 	CDiskStatistics(QDomElement *parent_element);
 	/** Virtual destructor for correct child class instances destruction */
