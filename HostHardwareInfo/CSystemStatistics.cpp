@@ -929,11 +929,14 @@ CSystemStatistics::CSystemStatistics(const CSystemStatistics &_obj)
 		m_lstUsersStatistics.append(new CUserStatistics(*pUserStat));
 	m_uiRcInit = _obj.m_uiRcInit;
 	m_iErrLine = _obj.m_iErrLine;
+	m_iErrCol = _obj.m_iErrCol;
 	m_iParseRc = _obj.m_iParseRc;
 }
 
 CSystemStatistics::CSystemStatistics(const QString &source_string)
-: m_pMemoryStatistics(new CMemoryStatistics), m_pSwapStatistics(new CSwapStatistics),
+	: m_uiRcInit(PRL_ERR_SUCCESS), m_iErrLine(-1), m_iErrCol(-1),
+	m_iParseRc(SystemStatisticsParser::RcSuccess),
+	m_pMemoryStatistics(new CMemoryStatistics), m_pSwapStatistics(new CSwapStatistics),
 	m_pUptimeStatistics(new CUptimeStatistics)
 {
 	if( !IS_OPERATION_SUCCEEDED( this->fromString( source_string ) ) )

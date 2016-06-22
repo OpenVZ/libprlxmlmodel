@@ -48,7 +48,11 @@ class CHwGenericDevice : public CBaseNode
 
 public:
 
-	CHwGenericDevice() {}
+	CHwGenericDevice():
+		m_uiDeviceType(PDE_GENERIC_DEVICE),
+		m_ctDeviceState(PGS_CONNECTED_TO_HOST)
+	{
+	}
 
 	// Standard class constructor
 	CHwGenericDevice(PRL_DEVICE_TYPE dev_type);
