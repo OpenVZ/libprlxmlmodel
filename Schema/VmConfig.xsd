@@ -1299,16 +1299,6 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 					<xs:documentation>method=Description;method_base_class=CVmDevice;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Password" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>no_save=on</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Encrypted" type="xs:boolean" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>no_save=on</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="BlockSize" type="xs:integer" default="0" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>no_save=on</xs:documentation>
@@ -3172,27 +3162,6 @@ bool CVmCommonOptions::operator==( const CVmCommonOptions&amp; cVmCommonOptions)
 				<xs:annotation>
 					<xs:documentation>single_fixed=on;</xs:documentation>
 				</xs:annotation>
-			</xs:element>
-			<xs:element name="VmEncryptionInfo">
-				<xs:annotation>
-					<xs:documentation>single_fixed=on;class=CVmEncryption;method=VmEncryption;</xs:documentation>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="Enabled" type="xs:boolean"/>
-						<xs:element name="PluginId" type="xs:string" minOccurs="0"/>
-						<xs:element name="Hash1" type="xs:string">
-							<xs:annotation>
-								<xs:documentation>method=UserPasswordReference;</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="Hash2" type="xs:string">
-							<xs:annotation>
-								<xs:documentation>method=MasterPasswordHash;</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
 			</xs:element>
 			<xs:element name="VmProtectionInfo">
 				<xs:annotation>

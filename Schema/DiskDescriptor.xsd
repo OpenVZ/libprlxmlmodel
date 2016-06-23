@@ -32,7 +32,6 @@
 			<xs:element name="Heads" type="xs:unsignedByte"/>
 			<xs:element name="Sectors" type="xs:unsignedByte"/>
 			<xs:element name="Padding" type="xs:unsignedLong" default="0"/>
-			<xs:element name="Encryption" type="Encryption"/>
 			<xs:element name="Miscellaneous" type="Misc">
 				<xs:annotation>
 					<xs:documentation>method=UserData;</xs:documentation>
@@ -97,20 +96,6 @@
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="Operation" default=""/>
-	</xs:complexType>
-	<!-- Encryption node-->
-	<xs:complexType name="Encryption">
-		<xs:annotation>
-			<xs:documentation>class=EncryptionNode;</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Engine" type="xs:string">
-				<xs:annotation>
-					<xs:documentation>default=Uuid::createUuid().toString();</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Data" type="xs:string" default=""/>
-		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Misc">
 		<xs:annotation>
