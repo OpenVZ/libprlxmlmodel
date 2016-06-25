@@ -194,7 +194,7 @@ def main():
         ('GuestOsInformation', 'GuestOsInformation', '', 'pmobile'),
         ('UserInformation', 'UserInformation', '', 'pmobile'),
         ('Licenses', 'Licenses', '', ''),
-        ('NetworkConfig', 'NetworkConfig', '--merge', ''),
+        ('NetworkConfig', 'NetworkConfig', '--properties --merge', ''),
         ('BackupTree', 'BackupTree', '', ''),
         ('DiskImageInfo', 'DiskImageInfo', '', ''),
         ('Reports', 'Reports', '', 'pmobile'),

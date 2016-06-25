@@ -159,6 +159,18 @@ public:
 				<xs:complexType>
 					<xs:complexContent>
 						<xs:extension base="NetworkPreferencesType">
+							<xs:element name="NetworkClassesConfig" type="NetworkClassesConfigType">
+								<xs:annotation>
+									<xs:documentation>class=CNetworkClassesConfig;extern=../NetworkConfig/CNetworkClassesConfig.h;single_fixed=on;</xs:documentation>
+								</xs:annotation>
+								<xs:complexType/>
+							</xs:element>
+							<xs:element name="NetworkShapingConfig" type="NetworkShapingConfigType">
+								<xs:annotation>
+									<xs:documentation>class=CNetworkShapingConfig;extern=../NetworkConfig/CNetworkShapingConfig.h;single_fixed=on;</xs:documentation>
+								</xs:annotation>
+								<xs:complexType/>
+							</xs:element>
 							<xs:sequence>
 								<xs:element name="NetworkAdapter" minOccurs="0" maxOccurs="unbounded">
 									<xs:annotation>
