@@ -1326,6 +1326,7 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 					<xs:documentation>no_save=on</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Encryption" type="DiskEncryptionType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Height" type="xs:integer"/>
@@ -4021,6 +4022,14 @@ bool CNetPktFilter::operator==( const CNetPktFilter&amp; cNetPktFilter)
 					<xs:documentation>method=MacAddress;no_save=on</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiskEncryptionType">
+		<xs:annotation>
+			<xs:documentation>class=CVmHddEncryption;</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="KeyId" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
