@@ -1208,7 +1208,7 @@ void CDispUsersPreferences::removeUser(CDispUser* item)
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="MountNTFSToHostOnConnectionToVm" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="VmGuestCollectPeriod" type="xs:integer" default="10" minOccurs="0"/>
+			<xs:element name="VmGuestCollectPeriod" type="xs:integer" default="5" minOccurs="0"/>
 			<xs:element name="VmGuestCpuLimitType" type="xs:integer" default="0" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
