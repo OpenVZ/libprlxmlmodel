@@ -133,6 +133,12 @@ bool CVmOpticalDisk::operator==( const CVmOpticalDisk&amp; cVmOpticalDisk )
 					<xs:documentation>no_save=on</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Alias" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>method_base_class=CVmDevice;</xs:documentation>
+					<xs:documentation>no_save=on</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ChangeDateTime" type="xs:dateTime" fixed="read_only_for_merge">
