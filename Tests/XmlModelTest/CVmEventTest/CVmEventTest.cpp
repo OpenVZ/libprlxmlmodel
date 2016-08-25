@@ -35,7 +35,24 @@
 #include <prlcommon/PrlUuid/Uuid.h>
 #include "VmConfig/CVmConfiguration.h"
 #include "Messaging/CVmEventParameter.h"
-#include "Tests/CommonTestsUtils.h"
+#include <prlcommon/Logging/Logging.h>
+#include <prlcommon/PrlCommonUtilsBase/PrlStringifyConsts.h>
+
+#define CHECK_EVENT_PARAMETER(pEvent, param_name, param_type, param_value)\
+	{\
+		CVmEventParameter *pParam = pEvent->getEventParameter(param_name);\
+		QVERIFY(pParam != NULL);\
+		QVERIFY(pParam->getParamType() == param_type);\
+		QCOMPARE(param_value, pParam->getParamValue());\
+	}
+
+#define CHECK_RET_CODE_EXP(expression)\
+	{\
+		PRL_RESULT nExprRetCode = (expression);\
+		if (PRL_FAILED(nExprRetCode))\
+			WRITE_TRACE(DBG_FATAL, "Expression: '%s' nRetCode=%.8X '%s'", #expression, nExprRetCode, PRL_RESULT_TO_STRING(nExprRetCode));\
+		QCOMPARE(nExprRetCode, PRL_ERR_SUCCESS);\
+	}
 
 CVmEventTest::CVmEventTest()
 : m_pVmEvent(NULL)
