@@ -224,7 +224,7 @@ public:
 											<xs:element name="DhcpScope">
 												<xs:annotation>
 													<xs:documentation>single_fixed=on;class=CDispDhcpPreferences;include=&lt;QtNetwork&gt;;method=DhcpPreferences;</xs:documentation>
-													<xs:documentation source="Tag condition">condition:m_ctEmulatedType != PNA_BRIDGED_ETHERNET</xs:documentation>
+													<xs:documentation source="Tag condition">condition:m_ctEmulatedType != PNA_BRIDGED_NETWORK</xs:documentation>
 												</xs:annotation>
 												<xs:complexType>
 													<xs:sequence>
@@ -238,7 +238,7 @@ public:
 											<xs:element name="DhcpV6Scope">
 												<xs:annotation>
 													<xs:documentation>single_fixed=on;class=CDispDhcpPreferences;extern=CDispDhcpPreferences.h;method=DhcpV6PreferencesOrig;</xs:documentation>
-													<xs:documentation source="Tag condition">condition:m_ctEmulatedType != PNA_BRIDGED_ETHERNET</xs:documentation>
+													<xs:documentation source="Tag condition">condition:m_ctEmulatedType != PNA_BRIDGED_NETWORK</xs:documentation>
 												</xs:annotation>
 												<xs:complexType/>
 											</xs:element>
