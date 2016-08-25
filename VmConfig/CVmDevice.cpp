@@ -473,6 +473,13 @@ struct Visitor : public boost::static_visitor<void>
 	void operator()(const Mode::Both& mode_) const;
 
 private:
+	QString getHome() const
+	{
+		return (PDE_SERIAL_PORT == m_device->getDeviceType()
+			&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()) ?
+			QDir::tempPath() : m_home;
+	}
+
 	CVmDevice *m_device;
 	QString m_home;
 	QString m_path;
@@ -482,14 +489,14 @@ template<>
 void Visitor<Flavor::Absolute>::operator()(const Mode::Both& mode_) const
 {
 	if (!QFileInfo(m_device->getUserFriendlyName()).isAbsolute())
-		mode_(Flavor::Absolute::convert(m_home, m_path));
+		mode_(Flavor::Absolute::convert(getHome(), m_path));
 }
 
 template<>
 void Visitor<Flavor::Relative>::operator()(const Mode::Both& mode_) const
 {
 	if (QFileInfo(m_device->getUserFriendlyName()).isAbsolute())
-		mode_(Flavor::Relative::convert(m_home, m_path));
+		mode_(Flavor::Relative::convert(getHome(), m_path));
 }
 
 } // namespace Path

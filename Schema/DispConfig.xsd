@@ -159,6 +159,18 @@ public:
 				<xs:complexType>
 					<xs:complexContent>
 						<xs:extension base="NetworkPreferencesType">
+							<xs:element name="NetworkClassesConfig" type="NetworkClassesConfigType">
+								<xs:annotation>
+									<xs:documentation>class=CNetworkClassesConfig;extern=../NetworkConfig/CNetworkClassesConfig.h;single_fixed=on;</xs:documentation>
+								</xs:annotation>
+								<xs:complexType/>
+							</xs:element>
+							<xs:element name="NetworkShapingConfig" type="NetworkShapingConfigType">
+								<xs:annotation>
+									<xs:documentation>class=CNetworkShapingConfig;extern=../NetworkConfig/CNetworkShapingConfig.h;single_fixed=on;</xs:documentation>
+								</xs:annotation>
+								<xs:complexType/>
+							</xs:element>
 							<xs:sequence>
 								<xs:element name="NetworkAdapter" minOccurs="0" maxOccurs="unbounded">
 									<xs:annotation>
@@ -280,11 +292,6 @@ public:
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="BackupTargetPreferences" type="BackupTargetPreferencesType">
-				<xs:annotation>
-					<xs:documentation>single_fixed=on;</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="EncryptionPreferences" type="EncryptionPreferencesType">
 				<xs:annotation>
 					<xs:documentation>single_fixed=on;</xs:documentation>
 				</xs:annotation>
@@ -610,6 +617,9 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 	setKey( key );
 	setUser( user );
 	setCompany( company );
+	setLicenseConfirmed(false);
+	setLicenseActivationStatus(PVE::LAS_UNKNOWN);
+	setRegistrationStatus(COMMON_NOT_INITIALIZED_INT_VALUE);
 }
 </xs:documentation>
 						<xs:documentation source="Tag condition">condition:false</xs:documentation>
@@ -985,19 +995,6 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:element name="DefaultBackupDirectory" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="EncryptionPreferencesType">
-		<xs:annotation>
-			<xs:documentation>class=CDispEncryptionPreferences;</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="DefaultPluginId" type="xs:string"/>
-			<xs:element name="DefaultPluginIdWasChanged" type="xs:boolean" default="false" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>no_save=on</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:element name="UseSSL" type="xs:boolean"/>
 	<xs:complexType name="UserCachedPaswordType">
 		<xs:annotation>
@@ -1211,7 +1208,7 @@ void CDispUsersPreferences::removeUser(CDispUser* item)
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="MountNTFSToHostOnConnectionToVm" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="VmGuestCollectPeriod" type="xs:integer" default="10" minOccurs="0"/>
+			<xs:element name="VmGuestCollectPeriod" type="xs:integer" default="5" minOccurs="0"/>
 			<xs:element name="VmGuestCpuLimitType" type="xs:integer" default="0" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
