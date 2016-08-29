@@ -1636,7 +1636,7 @@ void CVmGenericNetworkAdapter::setConfigureWithDhcpIPv6Ex(bool value)
 			</xs:element>
 			<xs:element name="EmulatedType" type="xs:integer">
 				<xs:annotation>
-					<xs:documentation>method_base_class=CVmDevice;default=PNA_BRIDGED_ETHERNET;</xs:documentation>
+					<xs:documentation>method_base_class=CVmDevice;default=PNA_BRIDGED_NETWORK;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SystemName" type="xs:string">
