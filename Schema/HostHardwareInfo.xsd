@@ -454,7 +454,7 @@ virtual PRL_DEVICE_TYPE getDeviceType() const { return PDE_SOUND_DEVICE; }
 						<xs:sequence>
 							<xs:element name="Number" type="xs:integer" default="XML_DEFAULT_HW_CPU_NUMBER"/>
 							<xs:element name="Model" type="xs:string"/>
-							<xs:element name="Mode" type="xs:integer" default="PCM_CPU_MODE_32">
+							<xs:element name="Mode" type="xs:integer" default="PCM_CPU_MODE_64">
 								<xs:annotation>
 									<xs:documentation>type=PRL_CPU_MODE;</xs:documentation>
 								</xs:annotation>
