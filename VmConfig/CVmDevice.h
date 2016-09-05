@@ -30,7 +30,7 @@
 #define CVMDEVICE_H
 
 
-#include "../ParallelsObjects/CBaseNode.h"
+#include <prlcommon/PrlObjects/CBaseNode.h>
 
 
 /**

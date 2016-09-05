@@ -23,7 +23,6 @@
 #
 
 include(../GuestOsInformation/GuestOsInformation.pri)
-include(../Messaging/Messaging.pri)
 include(../ParallelsObjects/ParallelsObjects.pri)
 include(../UserInformation/UserInformation.pri)
 include(../VmInfo/VmInfo.pri)

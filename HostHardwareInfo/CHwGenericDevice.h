@@ -33,8 +33,7 @@
 #include <QDomElement>
 #include <prlcommon/Interfaces/ParallelsDomModel.h>
 #include <prlcommon/Interfaces/ParallelsNamespace.h>
-
-#include "../ParallelsObjects/CBaseNode.h"
+#include <prlcommon/PrlObjects/CBaseNode.h>
 
 
 /**

@@ -34,7 +34,7 @@
 #include <QDomDocument>
 #include <prlcommon/PrlUuid/Uuid.h>
 #include "VmConfig/CVmConfiguration.h"
-#include "Messaging/CVmEventParameter.h"
+#include <prlcommon/Messaging/CVmEventParameter.h>
 #include <prlcommon/Logging/Logging.h>
 #include <prlcommon/PrlCommonUtilsBase/PrlStringifyConsts.h>
 

@@ -190,7 +190,6 @@ def main():
         ('ProblemReport', 'ProblemReport', '', 'pmobile'),
         ('VmConfig', 'VmConfig', '--signals --merge  --properties', 'pmobile'),
         ('VmDirectories', 'VmDirectory', '--merge --properties', 'pmobile'),
-        ('VmEvent', 'Messaging', '--merge  --properties', 'pmobile'),
         ('GuestOsInformation', 'GuestOsInformation', '', 'pmobile'),
         ('UserInformation', 'UserInformation', '', 'pmobile'),
         ('Licenses', 'Licenses', '', ''),

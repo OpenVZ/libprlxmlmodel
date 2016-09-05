@@ -74,7 +74,7 @@
 	"\n\n"
 
 #define HDR_INCLUDES \
-	"#include \"../ParallelsObjects/CBaseNode.h\"\n"
+	"#include <prlcommon/PrlObjects/CBaseNode.h>\n"
 
 #define HDR_INCLUDE \
 	"#include \"%1.h\"\n"

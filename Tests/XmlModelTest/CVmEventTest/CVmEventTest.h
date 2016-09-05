@@ -34,7 +34,7 @@
 
 #include <QtTest/QtTest>
 #include <QFile>
-#include "Messaging/CVmEvent.h"
+#include <prlcommon/Messaging/CVmEvent.h>
 
 class CVmEventTest : public QObject {
 

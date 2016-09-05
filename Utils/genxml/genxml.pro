@@ -38,10 +38,7 @@ XMLMODEL_INCLUDES = $$PRL_SRC_DIR \
 									$$PRL_SRC_DIR/XmlModel/DispConfig \
 									$$PRL_SRC_DIR/XmlModel/VmDirectory \
 									$$PRL_SRC_DIR/XmlModel/ProblemReport \
-									$$PRL_SRC_DIR/XmlModel/Messaging \
 									$$PRL_SRC_DIR/XmlModel/HostHardwareInfo \
-									$$PRL_SRC_DIR/XmlModel/ClientPreferences \
-									$$PRL_SRC_DIR/XmlModel/Updater \
 									$$PRL_SRC_DIR/XmlModel/DiskDescriptor \
 
 XMLMODEL_LIBS = -lprl_xml_model
