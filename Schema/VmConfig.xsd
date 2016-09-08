@@ -777,7 +777,7 @@ bool CVmCpu::operator==(CVmCpu&amp; cVmCpu)
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Number" type="xs:integer" default="XML_DEFAULT_VM_CPU_NUMBER"/>
-						<xs:element name="Mode" type="xs:integer" default="PCM_CPU_MODE_32">
+						<xs:element name="Mode" type="xs:integer" default="PCM_CPU_MODE_64">
 							<xs:annotation>
 								<xs:documentation>type=PRL_CPU_MODE;</xs:documentation>
 							</xs:annotation>

@@ -20,7 +20,7 @@
 			<xs:element name="OsType" type="xs:integer"/>
 			<xs:element name="OsVersion" type="xs:integer"/>
 			<xs:element name="OsTemplate" type="xs:string"/>
-			<xs:element name="CpuMode" type="xs:integer" default="PCM_CPU_MODE_32">
+			<xs:element name="CpuMode" type="xs:integer" default="PCM_CPU_MODE_64">
 				<xs:annotation>
 					<xs:documentation>type=PRL_CPU_MODE;</xs:documentation>
 				</xs:annotation>
