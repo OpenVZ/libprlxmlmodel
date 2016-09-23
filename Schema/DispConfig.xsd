@@ -377,6 +377,7 @@ public:
 			<xs:documentation>class=CDspDebug;</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="LegacyVmUpgrade" type="xs:boolean" default="false" minOccurs="0"/>
 			<xs:element name="MonitorCCPath" type="xs:string"/>
 			<xs:element name="VtdSetup" type="xs:integer" default="4" minOccurs="0"/>
 			<xs:element name="VerboseLogEnabled" type="xs:boolean" default="false" minOccurs="0"/>
