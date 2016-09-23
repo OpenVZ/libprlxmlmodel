@@ -74,6 +74,12 @@
 			<xs:element name="Name" type="xs:string"/>
 			<xs:element name="OriginalPath" type="xs:string"/>
 			<xs:element name="Size" type="xs:unsignedLong"/>
+			<xs:element name="Encryption" type="DiskEncryptionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>class=CVmHddEncryption;extern=../VmConfig/CVmHddEncryption.h;single_fixed=on;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType/>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BackupDisksType">
