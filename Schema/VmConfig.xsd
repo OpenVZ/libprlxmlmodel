@@ -2424,6 +2424,21 @@ CVmIoLimit::CVmIoLimit(const PRL_IOLIMIT_TYPE&amp; type, const PRL_UINT32&amp; v
 </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="OnCrash" block="restriction">
+				<xs:annotation>
+					<xs:documentation>class=CVmOnCrash;method=OnCrash;single_fixed=on;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Mode" type="xs:integer" default="POCA_RESTART" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>type=PRL_VM_ON_CRASH_ACTION;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Options" type="xs:integer" default="POCO_FULL" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="DockIcon" type="xs:integer" default="PIT_DOCK_ICON_SYSTEM">
 				<xs:annotation>
 					<xs:documentation>method=DockIconType;type=PRL_DOCK_ICON_TYPE;</xs:documentation>
