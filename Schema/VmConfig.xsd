@@ -2799,6 +2799,11 @@ bool CVmCommonOptions::operator==( const CVmCommonOptions&amp; cVmCommonOptions)
 						<xs:element name="Password" type="xs:string"/>
 						<xs:element name="HostName" type="xs:string" default='"0.0.0.0"'/>
 						<xs:element name="PortNumber" type="xs:integer" default="XML_DEFAULT_REMOTE_DISPLAY_PORT"/>
+						<xs:element name="WebSocketPortNumber" type="xs:integer" default="XML_DEFAULT_REMOTE_DISPLAY_PORT" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>no_save=on;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="Encrypted" type="xs:boolean" default="false" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
