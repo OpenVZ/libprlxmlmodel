@@ -906,7 +906,7 @@ bool CVmMemory::operator==(CVmMemory&amp; cVmMemory)
 								<xs:documentation>method=VmScreenResolutions;single_fixed=on;</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="Enable3DAcceleration" type="xs:integer" default="P3D_ENABLED_HIGHEST" minOccurs="0">
+						<xs:element name="Enable3DAcceleration" type="xs:integer" default="P3D_DISABLED" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>type=PRL_VIDEO_3D_ACCELERATION;</xs:documentation>
 							</xs:annotation>
