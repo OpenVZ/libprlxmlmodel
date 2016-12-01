@@ -38,6 +38,7 @@ CHostHardwareInfo::CHostHardwareInfo()
 	m_lstSerialPorts(*((QList<CHwGenericDevice* >* )&m_lstSerialPortsBase[0]->m_lstSerialPort)),
 	m_lstParallelPorts(*((QList<CHwGenericDevice* >* )&m_lstParallelPortsBase[0]->m_lstParallelPort)),
 	m_lstNetworkAdapters(m_lstNetworkAdaptersBase[0]->m_lstNetworkAdapter),
+	m_lstVirtualNetworkAdapters(m_lstVirtualNetworkAdaptersBase[0]->m_lstNetworkAdapter),
 	m_lstSoundOutputDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstOutputDevices[0]->m_lstOutputDevice)),
 	m_lstSoundMixerDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstMixerDevices[0]->m_lstMixerDevice)),
 	m_lstUsbDevices(*((QList<CHwUsbDevice* >* )&m_lstUsbDevicesBase[0]->m_lstUsbDevice)),
@@ -73,6 +74,7 @@ CHostHardwareInfo::CHostHardwareInfo(CHostHardwareInfo *other)
 	m_lstSerialPorts(*((QList<CHwGenericDevice* >* )&m_lstSerialPortsBase[0]->m_lstSerialPort)),
 	m_lstParallelPorts(*((QList<CHwGenericDevice* >* )&m_lstParallelPortsBase[0]->m_lstParallelPort)),
 	m_lstNetworkAdapters(m_lstNetworkAdaptersBase[0]->m_lstNetworkAdapter),
+	m_lstVirtualNetworkAdapters(m_lstVirtualNetworkAdaptersBase[0]->m_lstNetworkAdapter),
 	m_lstSoundOutputDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstOutputDevices[0]->m_lstOutputDevice)),
 	m_lstSoundMixerDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstMixerDevices[0]->m_lstMixerDevice)),
 	m_lstUsbDevices(*((QList<CHwUsbDevice* >* )&m_lstUsbDevicesBase[0]->m_lstUsbDevice)),
@@ -106,6 +108,7 @@ CHostHardwareInfo::CHostHardwareInfo(QString source_string)
 	m_lstSerialPorts(*((QList<CHwGenericDevice* >* )&m_lstSerialPortsBase[0]->m_lstSerialPort)),
 	m_lstParallelPorts(*((QList<CHwGenericDevice* >* )&m_lstParallelPortsBase[0]->m_lstParallelPort)),
 	m_lstNetworkAdapters(m_lstNetworkAdaptersBase[0]->m_lstNetworkAdapter),
+	m_lstVirtualNetworkAdapters(m_lstVirtualNetworkAdaptersBase[0]->m_lstNetworkAdapter),
 	m_lstSoundOutputDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstOutputDevices[0]->m_lstOutputDevice)),
 	m_lstSoundMixerDevices(*((QList<CHwGenericDevice* >* )&m_lstSoundDevices[0]->m_lstMixerDevices[0]->m_lstMixerDevice)),
 	m_lstUsbDevices(*((QList<CHwUsbDevice* >* )&m_lstUsbDevicesBase[0]->m_lstUsbDevice)),
@@ -161,6 +164,10 @@ void CHostHardwareInfo::cleanupClassProperties()
 	m_lstNetworkAdaptersBase[0]->ClearLists();
 	m_lstNetworkAdaptersBase[0]->InitLists();
 	m_lstNetworkAdaptersBase[0]->setDefaults();
+
+	m_lstVirtualNetworkAdaptersBase[0]->ClearLists();
+	m_lstVirtualNetworkAdaptersBase[0]->InitLists();
+	m_lstVirtualNetworkAdaptersBase[0]->setDefaults();
 
 	m_lstSoundDevices[0]->m_lstOutputDevices[0]->ClearLists();
 	m_lstSoundDevices[0]->m_lstOutputDevices[0]->InitLists();
@@ -237,6 +244,13 @@ void CHostHardwareInfo::addNetworkAdapter(CHwNetAdapter* device)
 	m_lstNetworkAdapters.append( device );
 
 } // CHostHardwareInfo::addNetworkAdapter()
+
+
+// Add virtual network adapter to the list
+void CHostHardwareInfo::addVirtualNetworkAdapter(CHwNetAdapter* device)
+{
+	m_lstVirtualNetworkAdapters.append( device );
+}
 
 
 // Add sound output device to the list

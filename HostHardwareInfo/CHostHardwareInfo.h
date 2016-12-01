@@ -67,6 +67,9 @@ public:
 	// List of network adapters
 	QList<CHwNetAdapter*>& m_lstNetworkAdapters;
 
+	// List of virtual network adapters
+	QList<CHwNetAdapter*>& m_lstVirtualNetworkAdapters;
+
 	// List of sound devices
 	QList<CHwGenericDevice*>& m_lstSoundOutputDevices;
 
@@ -134,6 +137,9 @@ public:
 
 	// Add network adapter to the list
 	void addNetworkAdapter(CHwNetAdapter* device);
+
+	// Add virtual network adapter to the list
+	void addVirtualNetworkAdapter(CHwNetAdapter* device);
 
 	// Add sound output device to the list
 	void addSoundOutputDevice(CHwGenericDevice* device);
