@@ -2442,6 +2442,7 @@ CVmIoLimit::CVmIoLimit(const PRL_IOLIMIT_TYPE&amp; type, const PRL_UINT32&amp; v
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="Options" type="xs:integer" default="POCO_FULL" minOccurs="0"/>
+						<xs:element name="Limit" type="xs:integer" default="XML_DEFAULT_VM_CRASH_LIMIT" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
