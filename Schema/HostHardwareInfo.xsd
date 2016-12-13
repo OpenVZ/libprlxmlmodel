@@ -429,6 +429,11 @@ virtual PRL_DEVICE_TYPE getDeviceType() const { return PDE_SOUND_DEVICE; }
 						<xs:documentation>list=NetworkAdaptersBase;single_fixed=on;</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="VirtualNetworkAdapters" type="NetworkAdaptersType">
+					<xs:annotation>
+						<xs:documentation>list=VirtualNetworkAdaptersBase;single_fixed=on;</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="SoundDevices" type="SoundDevicesType">
 					<xs:annotation>
 						<xs:documentation>single_fixed=on;</xs:documentation>
