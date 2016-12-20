@@ -204,6 +204,7 @@ def main():
         ('CpuFeatures', 'CpuFeatures', '--properties --merge', ''),
         ('VtInfo', 'VtInfo', '', ''),
         ('BackupActivity', 'BackupActivity', '', ''),
+        ('VcmmdConfig', 'VcmmdConfig', '', ''),
     )
 
     schemas2build = []
