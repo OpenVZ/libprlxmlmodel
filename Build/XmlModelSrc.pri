@@ -42,6 +42,7 @@ include(../VmDataStatistic/VmDataStatistic.pri)
 include(../CpuFeatures/CpuFeatures.pri)
 include(../VtInfo/VtInfo.pri)
 include(../BackupActivity/BackupActivity.pri)
+include(../VcmmdConfig/VcmmdConfig.pri)
 
 HEADERS += $$GEN_HEADERS
 SOURCES += $$GEN_SOURCES
