@@ -253,7 +253,7 @@ void CSystemStatisticsTest::testFormingProcInfoStatisticsBoundValues()
 	CProcInfoStatistics *pProcInfoStat = new CProcInfoStatistics;
 	pProcInfoStat->setCommandName("prl_disp_service -e --mode server");
 	pProcInfoStat->setProcId(UINT_MAX);
-	pProcInfoStat->setOwnerUser("prl_unit_test_user@parallels.ru");
+	pProcInfoStat->setOwnerUser("prl_unit_test_user@testhost.ru");
 	pProcInfoStat->setTotalMemUsage(ULLONG_MAX);
 	pProcInfoStat->setRealMemUsage(ULLONG_MAX);
 	pProcInfoStat->setVirtualMemUsage(ULLONG_MAX);

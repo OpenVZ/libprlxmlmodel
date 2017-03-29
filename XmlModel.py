@@ -26,9 +26,7 @@
 #
 
 """
-@copyright: Copyright (c) 2005-2017, Parallels International GmbH. All Rights Reserved; U{http://www.openvz.org}
-@organization: OpenVZ
-@contact: U{http://www.openvz.org}
+@copyright: Copyright (c) 2005-2017, Parallels International GmbH. All Rights Reserved
 G{classtree BuildLin}
 G{packagetree}
 G{importgraph}

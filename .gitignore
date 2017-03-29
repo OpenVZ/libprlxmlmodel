@@ -1,5 +1,6 @@
 **/Makefile*
 !Makefile.version
+!Makefile.incl
 z-Build/
 
 !VmConfig/CVmClusteredDevice.cpp
