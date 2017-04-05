@@ -1161,7 +1161,7 @@ void CDispUsersPreferences::removeUser(CDispUser* item)
 			</xs:element>
 			<xs:element name="HostId" type="xs:string" minOccurs="0"/>
 			<xs:element ref="DefaultCommandHistorySize"/>
-			<xs:element name="MinimalSecurityLevel" type="xs:integer" default="PSL_LOW_SECURITY" minOccurs="0">
+			<xs:element name="MinimalSecurityLevel" type="xs:integer" default="PSL_HIGH_SECURITY" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>type=PRL_SECURITY_LEVEL;</xs:documentation>
 				</xs:annotation>
