@@ -350,8 +350,15 @@ struct Relative
 	static QString convert(const QString& home_, const QString& path_)
 	{
 		namespace fs = boost::filesystem;
-		fs::path h(QDir::cleanPath(home_).toStdString());
-		fs::path p(QDir::cleanPath(path_).toStdString());
+		boost::system::error_code e;
+		fs::path h(fs::canonical(home_.toStdString(), e));
+		if (e)
+			h = fs::path(QDir::cleanPath(home_).toStdString());
+	
+		fs::path p(fs::canonical(path_.toStdString(), e));
+		if (e)
+			p = fs::path(QDir::cleanPath(path_).toStdString());
+
 		std::pair<fs::path::const_iterator, fs::path::const_iterator> i =
 			std::mismatch(h.begin(), h.end(), p.begin());
 		if (i.first == h.end() && i.second != p.begin())
