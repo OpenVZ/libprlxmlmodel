@@ -351,14 +351,21 @@ struct Relative
 	{
 		namespace fs = boost::filesystem;
 		boost::system::error_code e;
-		fs::path h(fs::canonical(home_.toStdString(), e));
+		fs::path h(fs::canonical(home_.toStdString(), e)), p;
 		if (e)
+		{
 			h = fs::path(QDir::cleanPath(home_).toStdString());
-	
-		fs::path p(fs::canonical(path_.toStdString(), e));
-		if (e)
 			p = fs::path(QDir::cleanPath(path_).toStdString());
-
+		}
+		else
+		{
+			fs::path x(path_.toStdString());
+			p = fs::canonical(x, e);
+			if (boost::system::errc::no_such_file_or_directory == e)
+				p = fs::canonical(x.parent_path(), e) / x.filename();
+			if (e)
+				p = fs::path(QDir::cleanPath(path_).toStdString());
+		}
 		std::pair<fs::path::const_iterator, fs::path::const_iterator> i =
 			std::mismatch(h.begin(), h.end(), p.begin());
 		if (i.first == h.end() && i.second != p.begin())
