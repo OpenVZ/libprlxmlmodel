@@ -825,7 +825,7 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:documentation>class=CDispRemoteDisplayPreferences;</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="BasePort" type="xs:integer" default="5700"/>
+			<xs:element name="BasePort" type="xs:integer" default="5900"/>
 			<xs:element name="MaxPort" type="xs:integer" minOccurs="0" default="6900"/>
 			<xs:element name="BaseHostName" type="xs:string" default='"0.0.0.0"'/>
 		</xs:sequence>
