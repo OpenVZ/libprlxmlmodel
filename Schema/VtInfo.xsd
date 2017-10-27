@@ -20,10 +20,21 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="GlobalCpuLimit" type="xs:boolean" default="true"/>
-			<xs:element name="RequiredCpuFeature" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>method=RequiredCpuFeatures</xs:documentation>
-				</xs:annotation>
+			<xs:element name="CpuFeatures">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Required" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>method=Required;list=Required;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Disabled" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>method=Disabled;list=Disabled;</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
 			<xs:element name="CpuModel" type="xs:string"/>
 		</xs:complexType>
