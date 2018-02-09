@@ -861,6 +861,7 @@ void CVmCpu::getCpuLimitData(PRL_CPULIMIT_DATA_PTR cpulimit)
 								<xs:documentation source="patch on">patch:</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element name="Alias" type="xs:string" minOccurs="0" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
