@@ -1917,14 +1917,14 @@ void CVmConfiguration::setAbsolutePath()
 }
 </xs:documentation>
 			<xs:documentation source="setRelativePath">header_fragment:
-	void setRelativePath();
+	void setRelativePath(const QString&amp; home_ = QString());
 </xs:documentation>
 			<xs:documentation source="setRelativePath_impl">unit_fragment:
-void CVmConfiguration::setRelativePath()
+void CVmConfiguration::setRelativePath(const QString&amp; home_)
 {
 	CVmHardware* pHwList = getVmHardwareList();
 	if (pHwList)
-		pHwList-&gt;SetDevicesPathToRelative( getConfigDirectory());
+		pHwList-&gt;SetDevicesPathToRelative(home_.isEmpty() ? getConfigDirectory() : home_);
 
 	CVmStartupBios* bios = getVmSettings()-&gt;getVmStartupOptions()-&gt;getBios();
 	if (!QFileInfo(bios-&gt;getNVRAM()).isRelative())
