@@ -521,7 +521,7 @@ void CVmDevice::setRelativeSystemName(const QString& strVmDirectory)
 	QString s = getSystemName();
 	if (s.isEmpty() || !QFileInfo(s).isAbsolute())
 		return;
-	if (!QDir(strVmDirectory).exists() || isRemote())
+	if (isRemote())
 		return;
 	Path::mode_type m = Path::getMode(*this);
 	boost::apply_visitor(Path::Visitor<Path::Flavor::Relative>(*this, strVmDirectory, s), m);
