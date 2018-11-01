@@ -425,41 +425,68 @@ private:
 
 } // namespace Mode
 
-typedef boost::variant<boost::blank, Mode::Both, Mode::System> mode_type;
+//////////////////////////////////////////////////////////////////////////////
+// struct Inspector
 
-mode_type getMode(CVmDevice& device_)
+struct Inspector
 {
-	uint e = device_.getEmulatedType();
-	switch (device_.getDeviceType())
+	typedef boost::variant<boost::blank, Mode::Both, Mode::System> mode_type;
+
+	explicit Inspector(CVmDevice& object_): m_object(&object_)
 	{
-		case PDE_FLOPPY_DISK:
-		case PDE_OPTICAL_DISK:
-		case PDE_PARALLEL_PORT:
-			if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE)
-				return Mode::Both(device_);
-			break;
-		case PDE_HARD_DISK:
-		{
-			if (e == PDT_USE_REAL_HDD || e == PDT_USE_BOOTCAMP)
-			{
-				return Mode::System(device_);
-			}
-			else if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE)
-			{
-				return Mode::Both(device_);
-			}
-			break;
-		}
-		case PDE_SERIAL_PORT:
-			if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE
-				|| e == PDT_USE_SERIAL_PORT_SOCKET_MODE)
-			{
-				return Mode::Both(device_);
-			}
-			break;
-		default:
-			break;
 	}
+
+	QString getName() const;
+	mode_type getMode() const;
+
+private:
+	CVmDevice* m_object;
+};
+
+QString Inspector::getName() const
+{
+	QString output = m_object->getSystemName();
+	if (PDE_HARD_DISK == m_object->getDeviceType() &&
+		m_object->getEmulatedType() == PDT_USE_FILE_SYSTEM)
+		output = m_object->getUserFriendlyName();
+
+	return output;
+}
+
+Inspector::mode_type Inspector::getMode() const
+{
+	uint e = m_object->getEmulatedType();
+	switch (m_object->getDeviceType())
+	{
+	case PDE_FLOPPY_DISK:
+	case PDE_OPTICAL_DISK:
+	case PDE_PARALLEL_PORT:
+		if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE)
+			return Mode::Both(*m_object);
+		break;
+	case PDE_HARD_DISK:
+	{
+		if (e == PDT_USE_REAL_HDD || e == PDT_USE_BOOTCAMP)
+		{
+			return Mode::System(*m_object);
+		}
+		else if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE)
+		{
+			return Mode::Both(*m_object);
+		}
+		break;
+	}
+	case PDE_SERIAL_PORT:
+		if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE
+			|| e == PDT_USE_SERIAL_PORT_SOCKET_MODE)
+		{
+			return Mode::Both(*m_object);
+		}
+		break;
+	default:
+		break;
+	}
+
 	return boost::blank();
 }
 
@@ -518,12 +545,12 @@ void Visitor<Flavor::Relative>::operator()(const Mode::Both& mode_) const
 
 void CVmDevice::setRelativeSystemName(const QString& strVmDirectory)
 {
-	QString s = getSystemName();
-	if (s.isEmpty() || !QFileInfo(s).isAbsolute())
+	Path::Inspector i(*this);
+	QString s = i.getName();
+	if (s.isEmpty() || !QFileInfo(s).isAbsolute() || isRemote())
 		return;
-	if (isRemote())
-		return;
-	Path::mode_type m = Path::getMode(*this);
+
+	Path::Inspector::mode_type m = i.getMode();
 	boost::apply_visitor(Path::Visitor<Path::Flavor::Relative>(*this, strVmDirectory, s), m);
 }
 
@@ -531,10 +558,13 @@ QString CVmDevice::RevertToInitialSystemName(const QString& strVmDirectory)
 {
 	if (getSystemName().isEmpty() || getUserFriendlyName().isEmpty())
 		return QString();
-	QString s = getSystemName();
+
+	Path::Inspector i(*this);
+	QString s = i.getName();
 	if (QFileInfo(s).isAbsolute() || strVmDirectory.isEmpty() || isRemote())
 		return s;
-	Path::mode_type m = Path::getMode(*this);
+
+	Path::Inspector::mode_type m = i.getMode();
 	boost::apply_visitor(Path::Visitor<Path::Flavor::Absolute>(*this, strVmDirectory, s), m);
 	return getSystemName();
 }
