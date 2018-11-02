@@ -465,17 +465,19 @@ Inspector::mode_type Inspector::getMode() const
 			return Mode::Both(*m_object);
 		break;
 	case PDE_HARD_DISK:
-	{
-		if (e == PDT_USE_REAL_HDD || e == PDT_USE_BOOTCAMP)
+		switch (e)
 		{
+		case PDT_USE_REAL_HDD:
+		case PDT_USE_BOOTCAMP:
 			return Mode::System(*m_object);
-		}
-		else if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE)
-		{
+
+		case PDT_USE_IMAGE_FILE:
+		case PDT_USE_OUTPUT_FILE:
+		case PDT_USE_FILE_SYSTEM:
 			return Mode::Both(*m_object);
 		}
 		break;
-	}
+
 	case PDE_SERIAL_PORT:
 		if (e == PDT_USE_IMAGE_FILE || e == PDT_USE_OUTPUT_FILE
 			|| e == PDT_USE_SERIAL_PORT_SOCKET_MODE)
