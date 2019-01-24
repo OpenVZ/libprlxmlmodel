@@ -571,6 +571,7 @@ void CDispCpuPreferences::setFeatures(const CDispCpuPreferences&amp; src_)
 	setEXT_80000007_EDX_MASK(src_.getEXT_80000007_EDX_MASK());
 	setEXT_80000008_EAX(src_.getEXT_80000008_EAX());
 	setEXT_00000007_EBX_MASK(src_.getEXT_00000007_EBX_MASK());
+	setEXT_00000007_EDX_MASK(src_.getEXT_00000007_EDX_MASK());
 	setEXT_0000000D_EAX_MASK(src_.getEXT_0000000D_EAX_MASK());
 	setCpuFeaturesMaskValid(src_.isCpuFeaturesMaskValid());
 }
