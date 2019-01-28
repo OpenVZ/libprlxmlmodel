@@ -33,6 +33,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <prlcommon/Std/PrlAssert.h>
+#include <prlcommon/PrlUuid/PrlUuid.h>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/variant/variant.hpp>
@@ -447,7 +448,8 @@ QString Inspector::getName() const
 {
 	QString output = m_object->getSystemName();
 	if (PDE_HARD_DISK == m_object->getDeviceType() &&
-		m_object->getEmulatedType() == PDT_USE_FILE_SYSTEM)
+		(m_object->getEmulatedType() == PDT_USE_FILE_SYSTEM ||
+		::PrlUuid::isUuid(m_object->getSystemName().toStdString())))
 		output = m_object->getUserFriendlyName();
 
 	return output;
