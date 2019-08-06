@@ -80,6 +80,7 @@ enum NewVmSources
 	</xs:complexType>
 	<xs:element name="ParallelsProblemReport">
 		<xs:annotation>
+			<xs:documentation>include=&quot;Build/Current.ver&quot;</xs:documentation>
 			<xs:documentation>class=CProblemReport;base_class=^-QObject;base_class=-CBaseNode;</xs:documentation>
 			<xs:documentation source="clearCrashDumps">header_fragment:
    virtual void clearCrashDumps()
