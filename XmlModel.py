@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 # vim:ts=4:sw=4:expandtab
 #
@@ -60,7 +60,7 @@ class SingleInstance:
                     if(os.path.exists(self.lockfile)):
                         os.unlink(self.lockfile)
                     self.fd =  os.open(self.lockfile, os.O_CREAT|os.O_EXCL|os.O_RDWR)
-                except OSError, e:
+                except OSError as e:
                     if e.errno == 13:
                         time.sleep(1)
                         do_exit = True
@@ -70,7 +70,7 @@ class SingleInstance:
                         # Paralell process may create it between
                         # our existance check and calling open()
                         continue
-                    print e.errno
+                    print(e.errno)
                     raise
                 break
         else:
@@ -116,7 +116,7 @@ def xsd2src(xsd_file, out_dir, flags = ''):
             os.path.abspath(out_dir)]
     xsd2src.extend(flags.split())
 
-    print " ".join(xsd2src)
+    print (" ".join(xsd2src))
     if subprocess.call(xsd2src):
         raise RuntimeError('Code generation failed for scheme "%s"' % xsd_file)
 
@@ -125,7 +125,7 @@ def safe_remove(file):
         os.remove( file )
 
 def build_xsd2src():
-    print 'Building xsd2src utility...'
+    print('Building xsd2src utility...')
 
     ext = ''
     if sys.platform == 'win32':
@@ -137,7 +137,7 @@ def build_xsd2src():
 
     os.chdir('./Utils/xsd2src')
 
-    qmake_cmd = 'qmake'
+    qmake_cmd = 'qmake-qt4'
     for arg in sys.argv[1:]:
         if arg.startswith('--qmake='):
             qmake_cmd = arg.split('=')[1]
@@ -224,11 +224,11 @@ def main():
 
     try:
         build_xsd2src()
-        print 'Generating XmlModel code...'
+        print('Generating XmlModel code...')
         for schema, schema_dir, opts in schemas2build:
             xsd2src('./Schema/%s.xsd' % schema, schema_dir, opts)
-    except RuntimeError, e:
-        print e
+    except RuntimeError as e:
+        print(e)
         return 1
     except KeyboardInterrupt:
         return 1
