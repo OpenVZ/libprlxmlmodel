@@ -63,12 +63,6 @@ import configparser as ConfigParser
 import re
 import xml.dom.minidom
 import multiprocessing
-"""
-try:
-    import cStringIO as StringIO
-except:
-    import StringIO
-"""
 
 #: Full path of this python file module
 __full_file_path__ = os.path.split(os.path.abspath(__file__))[0]
