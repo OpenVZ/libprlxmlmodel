@@ -1,6 +1,6 @@
 /*
  * CHwGenericDevice.h: Definition of the CHwGenericDevice class.
- * This class implements a generic device detected on Parallels
+ * This class implements a generic device detected on Virtuozzo
  * Dispatcher's host
  *
  * Copyright (c) 1999-2017, Parallels International GmbH
@@ -32,8 +32,8 @@
 
 #include <QDomDocument>
 #include <QDomElement>
-#include <prlcommon/Interfaces/ParallelsDomModel.h>
-#include <prlcommon/Interfaces/ParallelsNamespace.h>
+#include <prlcommon/Interfaces/VirtuozzoDomModel.h>
+#include <prlcommon/Interfaces/VirtuozzoNamespace.h>
 #include <prlcommon/PrlObjects/CBaseNode.h>
 
 

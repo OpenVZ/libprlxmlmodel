@@ -24,6 +24,6 @@
 #
 
 TEMPLATE = subdirs
-include(Parallels.pri)
+include(Virtuozzo.pri)
 include(Options.pri)
 addSubdirs(subbuild, subbuild.pro)

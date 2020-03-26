@@ -25,7 +25,7 @@
 
 TEMPLATE = app
 
-include(Parallels.pri)
+include(Virtuozzo.pri)
 
 clear(HEADERS)
 clear(SOURCES)

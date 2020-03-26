@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="Parallels_disk_image">
+	<xs:element name="Virtuozzo_disk_image">
 		<xs:annotation>
 			<xs:documentation>class=CDiskXML;</xs:documentation>
 		</xs:annotation>

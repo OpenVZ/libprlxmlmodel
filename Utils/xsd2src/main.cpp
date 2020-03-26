@@ -37,8 +37,8 @@
 	" -p, --properties          Add change properties mech to the generated classes.\n"
 
 #define UTILITY_VERSION			"1.0"
-#define TRANSPORTER_XSD_SCHEMA	"Parallels Transporter XSD-schema"
-#define SERVER_XSD_SCHEMA       "Parallels Server XSD-schema"
+#define TRANSPORTER_XSD_SCHEMA	"Virtuozzo Transporter XSD-schema"
+#define SERVER_XSD_SCHEMA       "Virtuozzo Server XSD-schema"
 
 #include <iostream>
 

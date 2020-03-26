@@ -453,7 +453,7 @@ public:
 	<xs:element name="IoServerConnectorPort" type="xs:integer"/>
 	<xs:complexType name="ProxyPreferencesType">
 		<xs:annotation>
-			<xs:documentation>single_fixed=on;class=CDispProxyPreferences;include="include=&lt;prlcommon/Interfaces/ParallelsNamespace.h&gt;;include=&lt;Build/Current-locale.ver&gt;</xs:documentation>
+			<xs:documentation>single_fixed=on;class=CDispProxyPreferences;include="include=&lt;prlcommon/Interfaces/VirtuozzoNamespace.h&gt;;include=&lt;Build/Current-locale.ver&gt;</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ProxyEnabled" type="xs:boolean" default="false" minOccurs="0"/>
@@ -593,7 +593,7 @@ void CDispCpuPreferences::setFeatures(const CDispCpuPreferences&amp; src_)
 	</xs:complexType>
 	<xs:element name="Name" type="xs:string"/>
 	<xs:complexType name="NetworkPreferencesType"/>
-	<xs:element name="ParallelsPreferences">
+	<xs:element name="VirtuozzoPreferences">
 		<xs:annotation>
 			<xs:documentation>class=CDispatcherConfig;</xs:documentation>
 			<xs:documentation source="Init constructor">header_fragment:
@@ -700,7 +700,7 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:attribute name="schemaVersion" type="xs:decimal" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="ParallelsUserType">
+	<xs:complexType name="VirtuozzoUserType">
 		<xs:annotation>
 			<xs:documentation>class=CDispUser;</xs:documentation>
 			<xs:documentation source="Init constructor">header_fragment:
@@ -1057,7 +1057,7 @@ void CDispUsersPreferences::removeUser(CDispUser* item)
 </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ParallelsUser" type="ParallelsUserType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="VirtuozzoUser" type="VirtuozzoUserType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>list=DispUsers;</xs:documentation>
 				</xs:annotation>

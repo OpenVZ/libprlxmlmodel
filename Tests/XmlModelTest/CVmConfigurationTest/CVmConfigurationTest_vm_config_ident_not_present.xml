@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsVirtualMachine schemaVersion="1.0">
+<VirtuozzoVirtualMachine schemaVersion="1.0">
 	<Identification>
 		<VmUuid>VM_UUID</VmUuid>
 		<VmName>VM_NAME</VmName>
@@ -127,4 +127,4 @@
 			<AutoConnect>1</AutoConnect>
 		</USB>
 	</Hardware>
-</ParallelsVirtualMachine>
+</VirtuozzoVirtualMachine>

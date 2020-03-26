@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsVirtualMachine xmlns="" schemaVersion="1.0" appVersion="4.0.1293" >
+<VirtuozzoVirtualMachine xmlns="" schemaVersion="1.0" appVersion="4.0.1293" >
   <appVersion xmlns="">1.0</appVersion>
   <Identification xmlns="">
     <VmUuid xmlns="">VM_UUID</VmUuid>
@@ -133,4 +133,4 @@
       </ScreenResolutions>
     </Video>
   </Hardware>
-</ParallelsVirtualMachine>
+</VirtuozzoVirtualMachine>

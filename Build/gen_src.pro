@@ -25,7 +25,7 @@
 
 TEMPLATE = app
 
-include(../../Parallels.pri)
+include(../../Virtuozzo.pri)
 
 include(XmlModelSrc.pri)
 QMAKE_CLEAN += $$GEN_HEADERS $$GEN_SOURCES

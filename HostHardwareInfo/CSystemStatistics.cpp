@@ -1250,7 +1250,7 @@ int CSystemStatistics::parseUsersStatistics(QDomElement* parent_element)
 
 int CSystemStatistics::parseVmDataStatistic(QDomElement* parent_element)
 {
-	QDomElement elem = parent_element->firstChildElement("ParallelsVmDataStatistic");
+	QDomElement elem = parent_element->firstChildElement("VirtuozzoVmDataStatistic");
 	return m_VmDataStatistic.readXml(&elem);
 }
 

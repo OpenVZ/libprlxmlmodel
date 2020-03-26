@@ -123,7 +123,7 @@ void CVmEventTest::testParseVmEvent1()
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "vm_message_choice_0", PVE::UnsignedInt, QString("2002"))
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "vm_message_choice_1", PVE::UnsignedInt, QString("2003"))
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "vm_message_param_0", PVE::String,\
-					QString("C:\\Parallels Virtual Machines\\DOS\\lpt.txt"))
+					QString("C:\\Virtuozzo Virtual Machines\\DOS\\lpt.txt"))
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "executive_server", PVE::String, QString("localhost"))
 }
 

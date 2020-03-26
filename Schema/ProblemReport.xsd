@@ -78,7 +78,7 @@ enum NewVmSources
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="ParallelsProblemReport">
+	<xs:element name="VirtuozzoProblemReport">
 		<xs:annotation>
 			<xs:documentation>include=&quot;Build/Current.ver&quot;</xs:documentation>
 			<xs:documentation>class=CProblemReport;base_class=^-QObject;base_class=-CBaseNode;</xs:documentation>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsVirtualMachine schemaVersion="1.0" appVersion="4.0.1293" >
+<VirtuozzoVirtualMachine schemaVersion="1.0" appVersion="4.0.1293" >
    <Identification>
       <VmUuid>VM_UUID</VmUuid>
       <VmName>VM_NAME</VmName>
@@ -396,4 +396,4 @@
          <DeviceDescription>GENERIC_SCSI_DEVICE_DESCRIPTION</DeviceDescription>
       </GenericScsiDevice>
    </Hardware>
-</ParallelsVirtualMachine>
+</VirtuozzoVirtualMachine>

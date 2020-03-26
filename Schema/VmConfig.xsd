@@ -1809,7 +1809,7 @@ bool CVmParallelPortOld::operator==( const CVmParallelPortOld&amp; cVmParallelPo
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="ParallelsVirtualMachine">
+	<xs:element name="VirtuozzoVirtualMachine">
 		<xs:annotation>
 			<xs:documentation>class=CVmConfiguration;</xs:documentation>
 			<xs:documentation source="ConfigDirectory">header_fragment:
@@ -2164,7 +2164,7 @@ CCtResource *CCtSettings::getResource(PRL_CT_RESOURCE id)
 						<xs:documentation>method=VmHardwareList;single_fixed=on;</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="VirtualAppliance" type="ParallelsVirtualApplianceType" minOccurs="0">
+				<xs:element name="VirtualAppliance" type="VirtuozzoVirtualApplianceType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>method=VaConfig;</xs:documentation>
 					</xs:annotation>
@@ -2507,7 +2507,7 @@ CVmIoLimit::CVmIoLimit(const PRL_IOLIMIT_TYPE&amp; type, const PRL_UINT32&amp; v
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="ParallelsEvent">
+						<xs:element name="VirtuozzoEvent">
 							<xs:annotation>
 								<xs:documentation>single_fixed=on;class=CVmEvent;extern=prlcommon/Messaging/CVmEvent.h;list=VmInfo</xs:documentation>
 							</xs:annotation>
@@ -3804,7 +3804,7 @@ bool CVmUsbDevice::operator==( const CVmUsbDevice&amp; cVmUsbDevice )
 	</xs:element>
 	<xs:element name="Width" type="xs:integer"/>
 	<xs:element name="WindowMode" type="xs:integer"/>
-	<xs:complexType name="ParallelsVirtualApplianceType">
+	<xs:complexType name="VirtuozzoVirtualApplianceType">
 		<xs:annotation>
 			<xs:documentation>class=CVaConfig;</xs:documentation>
 			<xs:documentation source="DownloadUrls">header_fragment:

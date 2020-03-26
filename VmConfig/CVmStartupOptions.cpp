@@ -30,7 +30,7 @@
 #include <QVariant>
 
 #include "CVmStartupOptions.h"
-#include <prlcommon/Interfaces/ParallelsDomModel.h>
+#include <prlcommon/Interfaces/VirtuozzoDomModel.h>
 
 // Standard class constructor
 CVmStartupOptions::CVmStartupOptions()

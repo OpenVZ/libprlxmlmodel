@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsPreferences schemaVersion="1.0" >
+<VirtuozzoPreferences schemaVersion="1.0" >
    <ServerIdentification>
       <ServerUuid>SERVER_UUID</ServerUuid>
    </ServerIdentification>
@@ -60,7 +60,7 @@
          </NetworkPreferences>
       </CommonPreferences>
       <UsersPreferences>
-         <ParallelsUser>
+         <VirtuozzoUser>
             <Name>USER_NAME</Name>
             <Uuid>USER_ID</Uuid>
             <AccessPreferences>
@@ -72,8 +72,8 @@
                <UserDefaultVmFolder>DEFAULT_VM_FOLDER</UserDefaultVmFolder>
                <UserHomeFolder>USER_HOME_FOLDER</UserHomeFolder>
             </UserWorkspace>
-         </ParallelsUser>
-         <ParallelsUser>
+         </VirtuozzoUser>
+         <VirtuozzoUser>
             <Name>USER_NAME</Name>
             <Uuid>USER_ID</Uuid>
             <AccessPreferences>
@@ -85,7 +85,7 @@
                <UserDefaultVmFolder>DEFAULT_VM_FOLDER</UserDefaultVmFolder>
                <UserHomeFolder>USER_HOME_FOLDER</UserHomeFolder>
             </UserWorkspace>
-         </ParallelsUser>
+         </VirtuozzoUser>
       </UsersPreferences>
    </ServerSettings>
-</ParallelsPreferences>
+</VirtuozzoPreferences>

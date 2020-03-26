@@ -1,7 +1,7 @@
 /*
  * CHwGenericDevice.cpp: Implementation of the CHwGenericDevice
  * class. This class implements a generic device detected on
- * Parallels Dispatcher's host.
+ * Virtuozzo Dispatcher's host.
  *
  * Copyright (c) 1999-2017, Parallels International GmbH
  * Copyright (c) 2017-2019 Virtuozzo International GmbH. All rights reserved.

@@ -29,7 +29,7 @@
 
 #include <QTextStream>
 
-#include <prlcommon/Interfaces/ParallelsDomModel.h>
+#include <prlcommon/Interfaces/VirtuozzoDomModel.h>
 #include "CVmHardware.h"
 #include <QDir>
 #include <QFileInfo>

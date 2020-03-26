@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsEvent schemaVersion="1.0" >
+<VirtuozzoEvent schemaVersion="1.0" >
    <EventType>1</EventType>
    <EventId>0</EventId>
    <EventLevel>0</EventLevel>
@@ -23,4 +23,4 @@
          <CData><![CDATA[CDATA]]></CData>
       </EventParameter>
    </EventParameters>
-</ParallelsEvent>
+</VirtuozzoEvent>

@@ -26,7 +26,7 @@
  */
 
 
-#include <prlcommon/Interfaces/ParallelsDomModel.h>
+#include <prlcommon/Interfaces/VirtuozzoDomModel.h>
 #include "CVmStorageDevice.h"
 
 

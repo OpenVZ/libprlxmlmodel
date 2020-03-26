@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsVmDirectories schemaVersion="1.0" >
+<VirtuozzoVmDirectories schemaVersion="1.0" >
    <ServerIdentification>
       <ServerUuid>SERVER_UUID</ServerUuid>
    </ServerIdentification>
@@ -51,4 +51,4 @@
          <ChangeDateTime>2007-07-12 17:39:36</ChangeDateTime>
       </VirtualMachine>
    </VmDirectory>
-</ParallelsVmDirectories>
+</VirtuozzoVmDirectories>

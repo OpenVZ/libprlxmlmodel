@@ -19,7 +19,7 @@
 			<xs:documentation>method=Valid;type=PVE::VmValidState;</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="ParallelsVmDirectories">
+	<xs:element name="VirtuozzoVmDirectories">
 		<xs:annotation>
 			<xs:documentation>class=CVmDirectories;</xs:documentation>
 			<xs:documentation source="getVmDirectoryByUuid">header_fragment:
