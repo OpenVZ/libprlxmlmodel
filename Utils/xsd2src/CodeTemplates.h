@@ -653,7 +653,7 @@
 	"\ttag_name = RootElement->tagName();\n" \
 	"\tm_qsTagName = tag_name;\n" \
 	"\tm_qsExtRootTagName = ext_tag_name;\n" \
-	"\tif (eqName(tag_name, (ext_tag_name.isEmpty() ? QString(\"%2\") : ext_tag_name), true))\n" \
+	"\tif (!eqName(tag_name, (ext_tag_name.isEmpty() ? QString(\"%2\") : ext_tag_name), true))\n" \
 	"\t{\n" \
 	"\t\tm_qsErrorMessage = \"Error in class '%3': wrong root element with tag name '\" + tag_name + \"'\";\n" \
 	"\t\treturn PRL_ERR_PARSE_VM_CONFIG;\n" \
