@@ -34,7 +34,7 @@ PRL_SRC_DIR = $$LEVEL/Sources
 PRL_BLD_DIR = $$LEVEL/z-Build
 
 XMLMODEL_INCLUDES = $$PRL_SRC_DIR \
-									$$PRL_SRC_DIR/XmlModel/ParallelsObjects \
+									$$PRL_SRC_DIR/XmlModel/VirtuozzoObjects \
 									$$PRL_SRC_DIR/XmlModel/VmConfig \
 									$$PRL_SRC_DIR/XmlModel/DispConfig \
 									$$PRL_SRC_DIR/XmlModel/VmDirectory \

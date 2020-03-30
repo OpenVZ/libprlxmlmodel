@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsProblemReport schemaVersion="1.0" created="1752-01-01 00:00:00" >
-   <Preamble><![CDATA[This is a Parallels problem report. Please send this file to Parallels Software International Inc. mailto:reports@parallels.com]]></Preamble>
+<VirtuozzoProblemReport schemaVersion="1.0" created="1752-01-01 00:00:00" >
+   <Preamble><![CDATA[This is a Virtuozzo problem report. Please send this file to Virtuozzo Software International Inc. mailto:reports@virtuozzo.com]]></Preamble>
    <LicenseInfo>
       <ProductName>no data</ProductName>
       <ProductVersion>no data</ProductVersion>
@@ -75,4 +75,4 @@
          </ScreenShot>
       </ScreenShots>
    </UserDefined>
-</ParallelsProblemReport>
+</VirtuozzoProblemReport>

@@ -166,9 +166,9 @@
 					<xs:documentation>type=QHostAddress;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ParallelsAdapter" type="ParallelsAdapterType">
+			<xs:element name="VirtuozzoAdapter" type="VirtuozzoAdapterType">
 				<xs:annotation>
-					<xs:documentation>single_fixed=on;class=CParallelsAdapter;</xs:documentation>
+					<xs:documentation>single_fixed=on;class=CVirtuozzoAdapter;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DHCPServer" type="DHCPServerType">
@@ -203,11 +203,11 @@
 			<xs:element name="UsedByDefault" type="xs:boolean" default="true" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="ParallelsNetworkConfig">
+	<xs:element name="VirtuozzoNetworkConfig">
 		<xs:annotation>
-			<xs:documentation>class=CParallelsNetworkConfig;</xs:documentation>
+			<xs:documentation>class=CVirtuozzoNetworkConfig;</xs:documentation>
 			<xs:documentation source="Init constructor">header_fragment:
-    CParallelsNetworkConfig(QString s) { InitLists(); fromString(s); }</xs:documentation>
+    CVirtuozzoNetworkConfig(QString s) { InitLists(); fromString(s); }</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -331,7 +331,7 @@ bool isClassConfigured(unsigned int nClassId)
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="ParallelsAdapterType">
+	<xs:complexType name="VirtuozzoAdapterType">
 		<xs:annotation>
 			<xs:documentation>include=&lt;QtNetwork&gt;</xs:documentation>
 		</xs:annotation>

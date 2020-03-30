@@ -363,7 +363,7 @@ virtual PRL_DEVICE_TYPE getDeviceType() const { return PDE_SOUND_DEVICE; }
 			<xs:element name="ParallelPort" type="ParallelPortType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="ParallelsHostInfo">
+	<xs:element name="VirtuozzoHostInfo">
 		<xs:annotation>
 			<xs:documentation>class=CHostHardwareInfoBase;</xs:documentation>
 		</xs:annotation>

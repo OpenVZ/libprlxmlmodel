@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsEvent schemaVersion="1.0" >
+<VirtuozzoEvent schemaVersion="1.0" >
 	<EventType>2</EventType>
 	<EventLevel>0</EventLevel>
 	<EventCode>100036</EventCode>
@@ -28,7 +28,7 @@
 		<EventParameter>
 			<Name>vm_message_param_0</Name>
 			<Type>1</Type>
-			<Value>C:\Parallels Virtual Machines\DOS\lpt.txt</Value>
+			<Value>C:\Virtuozzo Virtual Machines\DOS\lpt.txt</Value>
 		</EventParameter>
 		<EventParameter>
 			<Name>executive_server</Name>
@@ -36,5 +36,5 @@
 			<Value>localhost</Value>
 		</EventParameter>
 	</EventParameters>
-</ParallelsEvent>
+</VirtuozzoEvent>
 

@@ -25,7 +25,7 @@
 
 TEMPLATE = subdirs
 
-include(Build/Parallels.pri)
+include(Build/Virtuozzo.pri)
 include(Build/Options.pri)
 
 # Project structure

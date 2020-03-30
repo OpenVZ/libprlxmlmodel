@@ -33,7 +33,7 @@
 #include <QList>
 
 #include <prlcommon/Logging/Logging.h>
-#include <prlcommon/Interfaces/ParallelsQt.h>
+#include <prlcommon/Interfaces/VirtuozzoQt.h>
 
 #include <CVmConfiguration.h>
 #include <CVmDirectories.h>
@@ -985,7 +985,7 @@ int GenDiskDesc(const QString& File)
 
 	ImageNode* Im = Stor->getImage();
 	Im->setGUID("Something like the UID");
-	Im->setType("The gorgeous parallels image");
+	Im->setType("The gorgeous virtuozzo image");
 	Im->setFile("/the/path/to/the/file.itself");
 
 	Stor->setStart(0);

@@ -31,7 +31,7 @@ _DONT_LINK_LIBTARGET = yes
 
 include(../XmlModel.pri)
 
-INCLUDEPATH += ./ParallelsObjects
+INCLUDEPATH += ./VirtuozzoObjects
 
 linux-*:QMAKE_CXXFLAGS_RELEASE += -fno-strict-aliasing
 

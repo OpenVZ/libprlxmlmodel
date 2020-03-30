@@ -30,7 +30,7 @@
 #define CVMMASSSTORAGEDEVICE_H
 
 #include "CVmStorageDevice.h"
-#include <prlcommon/Interfaces/ParallelsNamespace.h>
+#include <prlcommon/Interfaces/VirtuozzoNamespace.h>
 
 
 /**

@@ -1,5 +1,5 @@
 #
-# ParallelsObjects.pri
+# VirtuozzoObjects.pri
 #
 # Copyright (c) 1999-2017, Parallels International GmbH
 # Copyright (c) 2017-2019 Virtuozzo International GmbH. All rights reserved.
@@ -31,7 +31,7 @@ HEADERS += $${DIR_HEADERS}
 SOURCES += $$PWD/CXmlModelHelper.cpp \
            $$PWD/CVmProfileHelper.cpp
 
-headers_ParallelsObjects.files = $${DIR_HEADERS}
-headers_ParallelsObjects.path = $${PREFIX}/include/prlxmlmodel/ParallelsObjects
-INSTALLS += headers_ParallelsObjects
+headers_VirtuozzoObjects.files = $${DIR_HEADERS}
+headers_VirtuozzoObjects.path = $${PREFIX}/include/prlxmlmodel/VirtuozzoObjects
+INSTALLS += headers_VirtuozzoObjects
 

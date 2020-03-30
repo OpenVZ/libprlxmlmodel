@@ -219,7 +219,7 @@ void CVmEventParameter::Deserialize(QDataStream &amp;_stream)
 			<xs:documentation>method=ParamName</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="ParallelsEvent">
+	<xs:element name="VirtuozzoEvent">
 		<xs:annotation>
 			<xs:documentation>class=CVmEventBase;base_class=-CBaseNode;base_class=-CPrlDataSerializer;</xs:documentation>
 		</xs:annotation>

@@ -28,7 +28,7 @@ CONFIG += staticlib
 
 include(../XmlModel.pri)
 
-INCLUDEPATH += ./ParallelsObjects
+INCLUDEPATH += ./VirtuozzoObjects
 
 linux-*:QMAKE_CXXFLAGS_RELEASE += -fno-strict-aliasing
 

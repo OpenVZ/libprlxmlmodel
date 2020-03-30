@@ -653,7 +653,7 @@
 	"\ttag_name = RootElement->tagName();\n" \
 	"\tm_qsTagName = tag_name;\n" \
 	"\tm_qsExtRootTagName = ext_tag_name;\n" \
-	"\tif (tag_name != (ext_tag_name.isEmpty() ? QString(\"%2\") : ext_tag_name))\n" \
+	"\tif (!eqName(tag_name, (ext_tag_name.isEmpty() ? QString(\"%2\") : ext_tag_name), true))\n" \
 	"\t{\n" \
 	"\t\tm_qsErrorMessage = \"Error in class '%3': wrong root element with tag name '\" + tag_name + \"'\";\n" \
 	"\t\treturn PRL_ERR_PARSE_VM_CONFIG;\n" \
@@ -710,7 +710,7 @@
 	"\t\t\ttext_element = temp_doc.createTextNode( pElement->attribute(attribute) );\n" \
 	"\t\t\tis_set = true;\n" \
 	"\t\t}\n" \
-	"\t\telse if (tag_name == \"%4\")\n" \
+	"\t\telse if (eqName(tag_name, \"%4\"))\n" \
 	"\t\t{\n" \
 	"\t\t\tis_set = true;\n" \
 	"\t\t\ttext_element = element.firstChild().toText();\n" \
@@ -722,7 +722,7 @@
 	"\t\t\t--%7_count;\n" \
 	"\t\t}\n\n\n"
 #define UNIT_DOM_ELEMENT_TO_MEMBER_LIST \
-	"\t\tif (tag_name == \"%1\")\n" \
+	"\t\tif (eqName(tag_name, \"%1\"))\n" \
 	"\t\t{\n" \
 	"\t\t\tunused_tag = false;\n" \
 	"\t\t\ttext_element = element.firstChild().toText();\n" \
@@ -732,7 +732,7 @@
 #define UNIT_MAKE_FULL_ITEM_ID_2 \
 	"\t\t\tobject->makeFullItemId(getFullItemId(), \"%1\"%2);\n"
 #define UNIT_LIST_DOM_ELEMENT_TO_MEMBER \
-	"\t\tif (tag_name == \"%1\")\n" \
+	"\t\tif (eqName(tag_name, \"%1\"))\n" \
 	"\t\t{\n" \
 	"\t\t\tunused_tag = false;\n" \
 	"\t\t\tint nItemId = element.attribute(\"id\", \"-1\").toInt();\n" \
@@ -753,7 +753,7 @@
 	"\t\t\tm_lstWarningList += object->GetWarningList();\n" \
 	"\t\t}\n\n"
 #define UNIT_LIST_DOM_ELEMENT_TO_MEMBER_SINGLE_FIXED \
-	"\t\tif (tag_name == \"%1\" && %2_count > 0)\n" \
+	"\t\tif (eqName(tag_name, \"%1\") && %2_count > 0)\n" \
 	"\t\t{\n" \
 	"\t\t\tunused_tag = false;\n" \
 	"\t\t\t%3* object = %4[%5 - %2_count];\n" \

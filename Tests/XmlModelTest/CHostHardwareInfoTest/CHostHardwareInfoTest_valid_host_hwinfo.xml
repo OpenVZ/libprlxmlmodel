@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParallelsHostInfo schemaVersion="1.0" >
+<VirtuozzoHostInfo schemaVersion="1.0" >
    <SoundDefaultEnabled>1</SoundDefaultEnabled>
    <VirtualNicGuid>VIRTUAL_NIC_GUID</VirtualNicGuid>
    <UsbSupported>1</UsbSupported>
@@ -198,4 +198,4 @@
          <Uuid>GENERIC_SCSI_DEVICE_UUID</Uuid>
       </GenericScsiDevice>
    </GenericScsiDevices>
-</ParallelsHostInfo>
+</VirtuozzoHostInfo>

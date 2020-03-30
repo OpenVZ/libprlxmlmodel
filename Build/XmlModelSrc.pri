@@ -24,7 +24,7 @@
 #
 
 include(../GuestOsInformation/GuestOsInformation.pri)
-include(../ParallelsObjects/ParallelsObjects.pri)
+include(../VirtuozzoObjects/VirtuozzoObjects.pri)
 include(../UserInformation/UserInformation.pri)
 include(../VmInfo/VmInfo.pri)
 include(../VmConfig/VmConfigBase.pri)

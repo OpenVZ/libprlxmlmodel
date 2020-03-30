@@ -30,7 +30,7 @@ QT += xml network
 QT -= gui
 
 LEVEL = ../../
-include($$LEVEL/Build/Parallels.pri)
+include($$LEVEL/Build/Virtuozzo.pri)
 include($$LEVEL/Build/Debug.pri)
 include($$LEVEL/XmlModel.pri)
 include($$LEVEL/Build/SharedQTWin.pri)
@@ -43,7 +43,7 @@ PRL_BLD_DIR = $$LEVEL/z-Build
 
 XMLMODEL_INCLUDES = $$PRL_SRC_DIR \
 									$$PRL_SRC_DIR/Interfaces \
-									$$PRL_SRC_DIR/XmlModel/ParallelsObjects \
+									$$PRL_SRC_DIR/XmlModel/VirtuozzoObjects \
 									$$PRL_SRC_DIR/XmlModel/VmConfig \
 									$$PRL_SRC_DIR/XmlModel/DispConfig \
 									$$PRL_SRC_DIR/XmlModel/VmDirectory \

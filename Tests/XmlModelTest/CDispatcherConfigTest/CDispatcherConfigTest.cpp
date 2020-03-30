@@ -137,13 +137,13 @@ void CDispatcherConfigTest::testChangeListPropertiesMech()
 	QList<int > lstIds = QList<int >() << 5 << 6 << 7 << 8 << 9;
 
 	QCOMPARE( m_pDispatcherConfig->getPropertyValue(
-				QString("ServerSettings.UsersPreferences.ParallelsUser[7].itemId")).toInt(),
+				QString("ServerSettings.UsersPreferences.VirtuozzoUser[7].itemId")).toInt(),
 			 7 );
 	QCOMPARE( m_pDispatcherConfig->getPropertyValue(
-				QString("ServerSettings.UsersPreferences.ParallelsUser.maxItemId")).toInt(),
+				QString("ServerSettings.UsersPreferences.VirtuozzoUser.maxItemId")).toInt(),
 			 9 );
 	QVERIFY( m_pDispatcherConfig->getPropertyValue(
-				QString("ServerSettings.UsersPreferences.ParallelsUser.listItemIds")).value<QList<int > >()
+				QString("ServerSettings.UsersPreferences.VirtuozzoUser.listItemIds")).value<QList<int > >()
 			 == lstIds );
 
 // 1 get list properties
@@ -152,7 +152,7 @@ void CDispatcherConfigTest::testChangeListPropertiesMech()
 	{
 		QString qsUserName =
 			m_pDispatcherConfig->getPropertyValue(
-				QString("ServerSettings.UsersPreferences.ParallelsUser[%1].Name").arg(5 + i)
+				QString("ServerSettings.UsersPreferences.VirtuozzoUser[%1].Name").arg(5 + i)
 				).toString();
 		QCOMPARE(qsUserName, QString("user %1").arg(i + 1));
 	}
@@ -162,13 +162,13 @@ void CDispatcherConfigTest::testChangeListPropertiesMech()
 	for(int i = 0; i < 5; ++i)
 	{
 		m_pDispatcherConfig->setPropertyValue(
-			QString("ServerSettings.UsersPreferences.ParallelsUser[%1].Name").arg(5 + i)
+			QString("ServerSettings.UsersPreferences.VirtuozzoUser[%1].Name").arg(5 + i)
 			, QVariant(QString("new user %1").arg(i + 1))
 			);
 
 		QString qsUserName =
 			m_pDispatcherConfig->getPropertyValue(
-				QString("ServerSettings.UsersPreferences.ParallelsUser[%1].Name").arg(5 + i)
+				QString("ServerSettings.UsersPreferences.VirtuozzoUser[%1].Name").arg(5 + i)
 				).toString();
 		QCOMPARE(qsUserName, QString("new user %1").arg(i + 1));
 	}
@@ -176,17 +176,17 @@ void CDispatcherConfigTest::testChangeListPropertiesMech()
 // 3 wrong path
 
 	QVERIFY( ! m_pDispatcherConfig->setPropertyValue(
-			"ServerSettings.UsersPreferences.ParallelsUser[4].Name"
+			"ServerSettings.UsersPreferences.VirtuozzoUser[4].Name"
 			, QVariant("abc")) );
 	QVERIFY( ! m_pDispatcherConfig->setPropertyValue(
-			"ServerSettings.UsersPreferences.ParallelsUser[10].Name"
+			"ServerSettings.UsersPreferences.VirtuozzoUser[10].Name"
 			, QVariant("abc")) );
 
 	QVERIFY( ! m_pDispatcherConfig->getPropertyValue(
-			"ServerSettings.UsersPreferences.ParallelsUser[4].Name")
+			"ServerSettings.UsersPreferences.VirtuozzoUser[4].Name")
 			.isValid() );
 	QVERIFY( ! m_pDispatcherConfig->getPropertyValue(
-			"ServerSettings.UsersPreferences.ParallelsUser[10].Name")
+			"ServerSettings.UsersPreferences.VirtuozzoUser[10].Name")
 			.isValid() );
 }
 
@@ -205,28 +205,28 @@ void CDispatcherConfigTest::testChangeListMech()
 
 // 1 add list item
 
-	int nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.ParallelsUser");
+	int nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.VirtuozzoUser");
 	QCOMPARE(nItemId, 10);
 
 	QVERIFY( m_pDispatcherConfig->setPropertyValue(
-			"ServerSettings.UsersPreferences.ParallelsUser[10].Name", QVariant("User 10")) );
+			"ServerSettings.UsersPreferences.VirtuozzoUser[10].Name", QVariant("User 10")) );
 
-	nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.ParallelsUser");
+	nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.VirtuozzoUser");
 	QCOMPARE(nItemId, 11);
 
 // 2 add list item with error
 
-	nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.NotParallelsUser");
+	nItemId = m_pDispatcherConfig->addListItem("ServerSettings.UsersPreferences.NotVirtuozzoUser");
 	QCOMPARE(nItemId, -1);
 
 // 3 delete list item
 
-	QVERIFY( m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.ParallelsUser[4]") );
+	QVERIFY( m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.VirtuozzoUser[4]") );
 
 // 4 delete list item with error
 
-	QVERIFY( ! m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.ParallelsUser[4]") );
-	QVERIFY( ! m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.ParallelsUser[12]") );
+	QVERIFY( ! m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.VirtuozzoUser[4]") );
+	QVERIFY( ! m_pDispatcherConfig->deleteListItem("ServerSettings.UsersPreferences.VirtuozzoUser[12]") );
 
 // 5 more complex addition
 

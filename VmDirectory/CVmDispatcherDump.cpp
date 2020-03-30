@@ -30,7 +30,7 @@
 #include <QMutexLocker>
 
 #include "CVmDispatcherDump.h"
-#include <prlcommon/Interfaces/ParallelsDomModel.h>
+#include <prlcommon/Interfaces/VirtuozzoDomModel.h>
 
 #include <prlcommon/Logging/Logging.h>
 
