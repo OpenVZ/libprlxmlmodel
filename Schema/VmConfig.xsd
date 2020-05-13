@@ -428,6 +428,16 @@ void CVmFullScreen::setCornerAction(PRL_WINDOW_CORNERS nCorner, PRL_CORNER_ACTIO
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="AssetId" type="xs:string" minOccurs="0"/>
+			<xs:element name="BackupTargetPreferences">
+				<xs:annotation>
+					<xs:documentation>single_fixed=on;class=CVmBackupTargetPreferences;</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DefaultBackupDirectory" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="GlobalNetworkType">
@@ -2732,6 +2742,8 @@ bool CVmCommonOptions::operator==( const CVmCommonOptions&amp; cVmCommonOptions)
 		(getOsType() == cVmCommonOptions.getOsType()) &amp;&amp;
 		(getOsVersion() == cVmCommonOptions.getOsVersion()) &amp;&amp;
 		(getIcon() == cVmCommonOptions.getIcon()) &amp;&amp;
+		(getBackupTargetPreferences()->getDefaultBackupDirectory() ==
+		 cVmCommonOptions.getBackupTargetPreferences()->getDefaultBackupDirectory()) &amp;&amp;
 		(getVmDescription() == cVmCommonOptions.getVmDescription())
 		)
 			return true;
