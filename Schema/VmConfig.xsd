@@ -1736,6 +1736,7 @@ void CVmGenericNetworkAdapter::setConfigureWithDhcpIPv6Ex(bool value)
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="VirtualPort" type="NetVirtualPortType" minOccurs="0"/>
+			<xs:element name="Bandwidth" type="NetBandwidthType" minOccurs="0"/>
 			<xs:element name="DeviceDescription" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>method=Description;method_base_class=CVmDevice;</xs:documentation>
@@ -4077,6 +4078,38 @@ bool CNetPktFilter::operator==( const CNetPktFilter&amp; cNetPktFilter)
 			<xs:element name="Type" type="xs:string"/>
 			<xs:element name="InterfaceId" type="xs:string" minOccurs="0"/>
 			<xs:element name="ProfileId" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NetBandwidthType">
+		<xs:annotation>
+			<xs:documentation>class=CVmNetBandwidth;</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Inbound" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>class=CVmNetBandwidthInbound</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Average" type="xs:integer"/>
+						<xs:element name="Peak" type="xs:integer" minOccurs="0"/>
+						<xs:element name="Burst" type="xs:integer" minOccurs="0"/>
+						<xs:element name="Floor" type="xs:integer" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Outbound" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>class=CVmNetBandwidthOutbound</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Average" type="xs:integer"/>
+						<xs:element name="Peak" type="xs:integer" minOccurs="0"/>
+						<xs:element name="Burst" type="xs:integer" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="DiskEncryptionType">
