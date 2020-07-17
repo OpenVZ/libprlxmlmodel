@@ -64,7 +64,8 @@ void CVmEventTest::initializeFromString(const QString &filename)
 	QDomDocument _xmldoc;
 	QVERIFY(_xmldoc.setContent(&_file));
 	_file.close();
-	m_pVmEvent = new CVmEvent(_xmldoc.toString());
+	m_pVmEvent = new CVmEvent();
+	m_pVmEvent->fromString(_xmldoc.toString(), QString("VirtuozzoEvent"));
 	QCOMPARE(m_pVmEvent->m_uiRcInit, PRL_ERR_SUCCESS);
 }
 
@@ -111,13 +112,7 @@ void CVmEventTest::cleanup() {
 
 void CVmEventTest::testParseVmEvent1()
 {
-	QFile _file("./CVmEventTest_test_data1.xml");
-	QVERIFY(_file.open(QIODevice::ReadOnly));
-	QDomDocument _xmldoc;
-	QVERIFY(_xmldoc.setContent(&_file));
-	_file.close();
-	m_pVmEvent = new CVmEvent(_xmldoc.toString());
-	CHECK_RET_CODE_EXP(m_pVmEvent->m_uiRcInit)
+	initializeFromString(QString("./CVmEventTest_test_data1.xml"));
 	QCOMPARE(m_pVmEvent->m_lstEventParameters.size(), 5);
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "vm_message", PVE::UnsignedInt, QString("1002"))
 	CHECK_EVENT_PARAMETER(m_pVmEvent, "vm_message_choice_0", PVE::UnsignedInt, QString("2002"))
