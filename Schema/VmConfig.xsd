@@ -4027,6 +4027,15 @@ void CVaConfig::clearAdminInterfaces()
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="NetPktFilterParamType">
+		<xs:annotation>
+			<xs:documentation>class=CNetPktFilterParam;</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="NetPktFilterType">
 		<xs:annotation>
 			<xs:documentation>class=CNetPktFilter;</xs:documentation>
@@ -4034,16 +4043,13 @@ void CVaConfig::clearAdminInterfaces()
     virtual bool operator==( const CNetPktFilter&amp; cCNetPktFilter);
 </xs:documentation>
 			<xs:documentation source="Comparision operator_impl">unit_fragment:
-bool CNetPktFilter::operator==( const CNetPktFilter&amp; cNetPktFilter)
+bool CNetPktFilter::operator==(const CNetPktFilter&amp; cNetPktFilter)
 {
-    if (isPreventPromisc() == cNetPktFilter.isPreventPromisc()
-	&amp;&amp; isPreventMacSpoof() == cNetPktFilter.isPreventMacSpoof()
-	&amp;&amp; isPreventIpSpoof() == cNetPktFilter.isPreventIpSpoof())
-    {
-        return true;
-    }
-
-    return false;
+    return isPreventPromisc() == cNetPktFilter.isPreventPromisc()
+			&amp;&amp; isPreventMacSpoof() == cNetPktFilter.isPreventMacSpoof()
+			&amp;&amp; isPreventIpSpoof() == cNetPktFilter.isPreventIpSpoof()
+			&amp;&amp; getFilterRef() == cNetPktFilter.getFilterRef()
+			&amp;&amp; m_lstParameters == cNetPktFilter.m_lstParameters;
 }
 </xs:documentation>
 		</xs:annotation>
@@ -4068,6 +4074,8 @@ bool CNetPktFilter::operator==( const CNetPktFilter&amp; cNetPktFilter)
 					<xs:documentation>method=MacAddress;no_save=on</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="FilterRef" type="xs:string" minOccurs="0"/>
+			<xs:element name="Parameters" type="NetPktFilterParamType" minOccurs="0" maxOccurs="unbound"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="NetVirtualPortType">

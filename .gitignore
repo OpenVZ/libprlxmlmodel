@@ -31,6 +31,7 @@ z-Build/
 
 Appliance
 AppLists
+BackupActivity
 BackupTree
 ClientPreferences
 CpuFeatures
@@ -50,8 +51,21 @@ ProblemReport
 Reports
 Updater
 UserInformation
+VcmmdConfig
 VmConfig
 VmDataStatistic
 VmDirectory
 VmInfo
+VtInfo
 XKeyMaps
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# IDE settings
+.idea
+.vscode
+
+# OS generated files
+**/.DS_Store
