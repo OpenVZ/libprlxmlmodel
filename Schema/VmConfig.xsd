@@ -1821,7 +1821,7 @@ bool CVmParallelPortOld::operator==( const CVmParallelPortOld&amp; cVmParallelPo
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="VirtuozzoVirtualMachine">
+	<xs:element name="ParallelsVirtualMachine">
 		<xs:annotation>
 			<xs:documentation>class=CVmConfiguration;</xs:documentation>
 			<xs:documentation source="ConfigDirectory">header_fragment:
