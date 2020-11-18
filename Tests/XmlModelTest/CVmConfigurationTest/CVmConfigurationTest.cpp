@@ -259,7 +259,7 @@ void CVmConfigurationTest::testValidateMergeMechForField()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Settings.General.VmDescription") );
+				QString("ParallelsVirtualMachine.Settings.General.VmDescription") );
 }
 
 void CVmConfigurationTest::testValidateMergeMechForList()
@@ -287,7 +287,7 @@ void CVmConfigurationTest::testValidateMergeMechForList()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Hardware.Hdd") );
+				QString("ParallelsVirtualMachine.Hardware.Hdd") );
 
 	// b) the same list size and different id sets
 	cfgNew.fromString(m_pVmConfiguration->toString());
@@ -303,7 +303,7 @@ void CVmConfigurationTest::testValidateMergeMechForList()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Hardware.Hdd") );
+				QString("ParallelsVirtualMachine.Hardware.Hdd") );
 
 // 2
 	int i = -1;
@@ -401,7 +401,7 @@ void CVmConfigurationTest::testValidateMergeMechForList()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Hardware.[id=%1]Hdd.DeviceDescription")
+				QString("ParallelsVirtualMachine.Hardware.[id=%1]Hdd.DeviceDescription")
 				.arg(cfgNew.getVmHardwareList()->m_lstHardDisks[3]->getItemId()) );
 }
 
@@ -437,7 +437,7 @@ void CVmConfigurationTest::testValidateRestrictMergeMech()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev, moEnableRestrictSections ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Hardware.[id=%1]Fdd")
+				QString("ParallelsVirtualMachine.Hardware.[id=%1]Fdd")
 				.arg(cfgNew.getVmHardwareList()->m_lstFloppyDisks[0]->getItemId()) );
 }
 
@@ -463,7 +463,7 @@ void CVmConfigurationTest::testValidateFixedFieldMergeMech()
 
 	QVERIFY( cfgNew.mergeDocuments<CVmConfiguration>( &cfgCur, &cfgPrev ) );
 	QCOMPARE( cfgNew.GetErrorMessage(),
-				QString("VirtuozzoVirtualMachine.Hardware.[id=%1]Hdd.SizeOnDisk")
+				QString("ParallelsVirtualMachine.Hardware.[id=%1]Hdd.SizeOnDisk")
 				.arg(cfgNew.getVmHardwareList()->m_lstHardDisks[0]->getItemId()) );
 
 // 2 merge with fixed fields (no conflict)
