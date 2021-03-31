@@ -522,8 +522,8 @@ private:
 	QString getHome() const
 	{
 		return (PDE_SERIAL_PORT == m_device->getDeviceType()
-			&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()) ?
-			QDir::tempPath() : m_home;
+				&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()) ?
+                QDir::tempPath().append("/vz-vm-sockets/").append(QDir(m_home).dirName()) : m_home;
 	}
 
 	CVmDevice *m_device;
