@@ -956,10 +956,6 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 		<xs:sequence>
 			<xs:element name="DefaultBackupServer" type="xs:string"/>
 			<xs:element name="Login" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation/>
-					<xs:documentation source="condition">condition:isSave()</xs:documentation>
-				</xs:annotation>
 			</xs:element>
 			<xs:element name="Password" type="xs:string" minOccurs="0">
 				<xs:annotation>
