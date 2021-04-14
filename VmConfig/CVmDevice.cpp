@@ -39,6 +39,8 @@
 #include <boost/filesystem/operations.hpp>
 #include <boost/variant/variant.hpp>
 
+#define SERIAL_PREFIX "vm-serial"
+
 CVmDevice::CVmDevice()
 {
 	static bool first_time = true;
@@ -523,7 +525,7 @@ private:
 	{
 		return (PDE_SERIAL_PORT == m_device->getDeviceType()
 				&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()) ?
-                QDir::tempPath().append("/vz-vm-sockets/").append(QDir(m_home).dirName()) : m_home;
+				QDir::tempPath() : m_home;
 	}
 
 	CVmDevice *m_device;
@@ -535,7 +537,15 @@ template<>
 void Visitor<Flavor::Absolute>::operator()(const Mode::Both& mode_) const
 {
 	if (!QFileInfo(m_device->getUserFriendlyName()).isAbsolute())
-		mode_(Flavor::Absolute::convert(getHome(), m_path));
+	{
+		QString path = m_path;
+		if (PDE_SERIAL_PORT == m_device->getDeviceType()
+				&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()
+				&& !path.startsWith(SERIAL_PREFIX))
+			path = QString("%1-%2.%3").arg(SERIAL_PREFIX).arg(QDir(m_home).dirName()).arg(m_path);
+
+		mode_(Flavor::Absolute::convert(getHome(), path));
+	}
 }
 
 template<>
