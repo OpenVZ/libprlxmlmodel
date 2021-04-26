@@ -542,7 +542,11 @@ void Visitor<Flavor::Absolute>::operator()(const Mode::Both& mode_) const
 		if (PDE_SERIAL_PORT == m_device->getDeviceType()
 				&& PDT_USE_SERIAL_PORT_SOCKET_MODE == m_device->getEmulatedType()
 				&& !path.startsWith(SERIAL_PREFIX))
-			path = QString("%1-%2.%3").arg(SERIAL_PREFIX).arg(QDir(m_home).dirName()).arg(m_path);
+		{
+			path = QString("%1-%2.%3").arg(SERIAL_PREFIX).arg(m_path).arg(QDir(m_home).dirName());
+			// UNIX_PATH_MAX   108
+			path.truncate(108 - getHome().length() -1);
+		}
 
 		mode_(Flavor::Absolute::convert(getHome(), path));
 	}
