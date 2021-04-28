@@ -544,8 +544,8 @@ void Visitor<Flavor::Absolute>::operator()(const Mode::Both& mode_) const
 				&& !path.startsWith(SERIAL_PREFIX))
 		{
 			path = QString("%1-%2.%3").arg(SERIAL_PREFIX).arg(m_path).arg(QDir(m_home).dirName());
-			// UNIX_PATH_MAX   108
-			path.truncate(108 - getHome().length() -1);
+			// UNIX_PATH_MAX is 108 lets use 100 for safety
+			path.truncate(100- getHome().length());
 		}
 
 		mode_(Flavor::Absolute::convert(getHome(), path));
