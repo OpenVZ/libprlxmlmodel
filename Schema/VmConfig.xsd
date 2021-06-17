@@ -852,7 +852,7 @@ void CVmCpu::getCpuLimitData(PRL_CPULIMIT_DATA_PTR cpulimit)
 						<xs:element name="GuestLimitType" type="xs:integer" default="0" minOccurs="0"/>
 						<xs:element name="CpuMask" type="xs:string" minOccurs="0"/>
 						<xs:element name="NodeMask" type="xs:string" minOccurs="0"/>
-						<xs:element name="VirtualizedHV" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="VirtualizedHV" type="xs:boolean" default="true" minOccurs="0"/>
 						<xs:element name="VirtualizePMU" type="xs:boolean" default="false" minOccurs="0"/>
 						<xs:element name="Sockets" type="xs:integer" default="1" minOccurs="0"/>
 					</xs:sequence>
