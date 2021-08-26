@@ -1340,6 +1340,7 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SerialNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="Removable" 	type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Alias" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>method_base_class=CVmDevice;</xs:documentation>
