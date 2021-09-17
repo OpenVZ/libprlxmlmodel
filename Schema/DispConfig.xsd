@@ -949,6 +949,18 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:documentation>default=Uuid::createUuid().toString();</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:complexType name="BackupModeType">
+		<xs:annotation>
+			<xs:documentation>class=CDispBackupMode;</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Mode" type="xs:integer" default="PBM_PUSH">
+				<xs:annotation>
+				    <xs:documentation>type=PRL_VM_BACKUP_MODE;</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="BackupSourcePreferencesType">
 		<xs:annotation>
 			<xs:documentation>class=CDispBackupSourcePreferences;</xs:documentation>
@@ -974,6 +986,8 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:element name="Timeout" type="xs:integer" default="3600" minOccurs="0"/>
 			<xs:element name="TmpDir" type="xs:string" minOccurs="0"/>
 			<xs:element name="Sandbox" type="xs:string" minOccurs="0"/>
+			<xs:element name="BackupMode" type="BackupModeType" minOccurs="0">
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="MountPreferencesType">
