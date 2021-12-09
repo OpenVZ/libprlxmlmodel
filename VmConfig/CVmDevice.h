@@ -159,12 +159,12 @@ private slots:
 
 };
 
-#ifndef DM_795237
-#define DM_795237
+#ifndef DM_3922657317
+#define DM_3922657317
 Q_DECLARE_METATYPE(PVE::DeviceEnabledState)
 #endif
-#ifndef DM_21711685
-#define DM_21711685
+#ifndef DM_2134504477
+#define DM_2134504477
 Q_DECLARE_METATYPE(PVE::DeviceConnectedState)
 #endif
 
@@ -176,8 +176,8 @@ Q_DECLARE_METATYPE(PVE::ParallelPortEmulatedType)
 Q_DECLARE_METATYPE(PVE::SerialPortEmulatedType)
 Q_DECLARE_METATYPE(PVE::SoundDeviceEmulatedType)
 Q_DECLARE_METATYPE(PVE::UsbDeviceEmulatedType)
-#ifndef DM_79465381
-#define DM_79465381
+#ifndef DM_2050323745
+#define DM_2050323745
 Q_DECLARE_METATYPE(PRL_NET_ADAPTER_EMULATED_TYPE)
 #endif
 

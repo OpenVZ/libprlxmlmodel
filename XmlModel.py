@@ -137,7 +137,7 @@ def build_xsd2src():
 
     os.chdir('./Utils/xsd2src')
 
-    qmake_cmd = 'qmake-qt4'
+    qmake_cmd = 'qmake-qt5'
     for arg in sys.argv[1:]:
         if arg.startswith('--qmake='):
             qmake_cmd = arg.split('=')[1]
