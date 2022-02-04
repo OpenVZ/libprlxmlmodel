@@ -1442,6 +1442,15 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 	<xs:complexType name="NetFirewallType">
 		<xs:annotation>
 			<xs:documentation>class=CVmNetFirewall;</xs:documentation>
+			<xs:documentation source="Comparision operator">header_fragment:
+	virtual bool operator==( const CVmNetFirewall&amp; cVmNetFirewall);
+			</xs:documentation>
+			<xs:documentation source="Comparision operator_impl">unit_fragment:
+bool CVmNetFirewall::operator==(const CVmNetFirewall&amp; cVmNetFirewall)
+{
+	return isEnabled() == cVmNetFirewall.isEnabled();
+}
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
@@ -1542,7 +1551,11 @@ bool CVmGenericNetworkAdapter::operator==( const CVmGenericNetworkAdapter&amp; c
         &amp;&amp; isConfigureWithDhcp() == cVmGenericNetworkAdapter.isConfigureWithDhcp()
         &amp;&amp; isConfigureWithDhcpIPv6() == cVmGenericNetworkAdapter.isConfigureWithDhcpIPv6()
         &amp;&amp; getAdapterType() == cVmGenericNetworkAdapter.getAdapterType()
-	&amp;&amp; *getPktFilter() == *cVmGenericNetworkAdapter.getPktFilter())
+        &amp;&amp; ( (  getFirewall() == NULL &amp;&amp; cVmGenericNetworkAdapter.getFirewall() == NULL) ||
+                     ( (getFirewall() != NULL &amp;&amp; cVmGenericNetworkAdapter.getFirewall() != NULL 
+                        &amp;&amp; *getFirewall() == *cVmGenericNetworkAdapter.getFirewall() ) )
+                    )
+        &amp;&amp; *getPktFilter() == *cVmGenericNetworkAdapter.getPktFilter())
     {
         return true;
     }
