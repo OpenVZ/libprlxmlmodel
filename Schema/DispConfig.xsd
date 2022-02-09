@@ -836,6 +836,7 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			</xs:element>
 			<xs:element name="MaxPort" type="xs:integer" minOccurs="0" default="6900"/>
 			<xs:element name="BaseHostName" type="xs:string" default='"0.0.0.0"'/>
+			<xs:element name="EnableClipboard" type="xs:boolean" default="false" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="UsbPreferencesType">
