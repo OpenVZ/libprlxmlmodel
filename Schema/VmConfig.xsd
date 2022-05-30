@@ -1546,6 +1546,7 @@ bool CVmGenericNetworkAdapter::operator==( const CVmGenericNetworkAdapter&amp; c
         &amp;&amp; getNetAddresses() == cVmGenericNetworkAdapter.getNetAddresses()
         &amp;&amp; isAutoApply() == cVmGenericNetworkAdapter.isAutoApply()
         &amp;&amp; getDefaultGateway() == cVmGenericNetworkAdapter.getDefaultGateway()
+        &amp;&amp; getDefaultGatewayIPv6() == cVmGenericNetworkAdapter.getDefaultGatewayIPv6()
         &amp;&amp; getDnsIPAddresses() == cVmGenericNetworkAdapter.getDnsIPAddresses()
         &amp;&amp; getSearchDomains() == cVmGenericNetworkAdapter.getSearchDomains()
         &amp;&amp; isConfigureWithDhcp() == cVmGenericNetworkAdapter.isConfigureWithDhcp()
