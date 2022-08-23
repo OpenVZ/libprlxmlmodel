@@ -1954,7 +1954,10 @@ void CVmConfiguration::setRelativePath(const QString&amp; home_)
 		pHwList-&gt;SetDevicesPathToRelative(home_.isEmpty() ? getConfigDirectory() : home_);
 
 	CVmStartupBios* bios = getVmSettings()-&gt;getVmStartupOptions()-&gt;getBios();
-	if (!QFileInfo(bios-&gt;getNVRAM()).isRelative())
+	QString config_pvs_path = QFileInfo(getVmIdentification()-&gt;getHomePath()).absolutePath();
+
+	if (!QFileInfo(bios-&gt;getNVRAM()).isRelative() &amp;&amp; 
+				QFileInfo(bios-&gt;getNVRAM()).absolutePath().startsWith(config_pvs_path))
 		bios->setNVRAM(QDir(getConfigDirectory()).relativeFilePath(bios-&gt;getNVRAM()));
 }
 </xs:documentation>
