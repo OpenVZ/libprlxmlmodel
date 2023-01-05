@@ -1319,11 +1319,8 @@ bool CVmHardDisk::operator==( const CVmHardDisk&amp; cVmHardDisk )
 					<xs:documentation>method=Description;method_base_class=CVmDevice;</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="BlockSize" type="xs:integer" default="0" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>no_save=on</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="LogicalBlockSize" type="xs:integer" default="512" minOccurs="0"/>
+			<xs:element name="PhysicalBlockSize" type="xs:integer" default="4096" minOccurs="0"/>
 			<xs:element name="AutoCompressEnabled" type="xs:boolean" default="true" minOccurs="0"/>
 			<xs:element name="StorageURL" type="xs:anyURI" minOccurs="0"/>
 			<xs:element name="IoLimit" type="CVmIoLimit" minOccurs="0">
