@@ -881,7 +881,7 @@ QString CodeComposer::CompositeHeader(const QString& ClassName, const QString& R
 			if (real_type == "bool")
 			{
 				if (private_getter)
-					content += "\n"HDR_METHOD_PRIVATE_BEGIN;
+					content += "\n" + QString(HDR_METHOD_PRIVATE_BEGIN);
 				content += QString(HDR_IS_METHOD).arg(virtual_prefix_method_name, method_name);
 				if (private_getter)
 					content += HDR_METHOD_PRIVATE_END;
@@ -889,7 +889,7 @@ QString CodeComposer::CompositeHeader(const QString& ClassName, const QString& R
 			else
 			{
 				if (private_getter)
-					content += "\n"HDR_METHOD_PRIVATE_BEGIN;
+					content += "\n" + QString(HDR_METHOD_PRIVATE_BEGIN);
 				content += QString(HDR_GET_METHOD).arg(virtual_prefix_method_name, real_type, method_name);
 				if (private_getter)
 					content += HDR_METHOD_PRIVATE_END;
