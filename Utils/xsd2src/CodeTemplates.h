@@ -94,10 +94,10 @@
 	"CBaseNodeSignals"
 
 #define HDR_DEFAULT_BASE_CLASS \
-	" public "DEFAULT_BASE_CLASS"\n"
+	" public " DEFAULT_BASE_CLASS "\n"
 
 #define HDR_DEFAULT_SIGNALS_BASE_CLASS \
-	" public "DEFAULT_SIGNALS_BASE_CLASS"\n"
+	" public " DEFAULT_SIGNALS_BASE_CLASS "\n"
 
 #define HDR_BASE_CLASS_IDENT \
 	"\t\t\t\t,"
@@ -935,15 +935,15 @@
 
 // Templates for xs:any
 #define UNIT_STORE_NODE_NAME	"m_AnyNodeCopy"
-#define UNIT_STORE_NODE_DECL	"\tQDomNode "UNIT_STORE_NODE_NAME";\n"
+#define UNIT_STORE_NODE_DECL	"\tQDomNode " UNIT_STORE_NODE_NAME ";\n"
 
 #define UNIT_STORE_NODE_CODE	\
-	"\t"UNIT_STORE_NODE_NAME" = RootElement->cloneNode(true);\n"
+	"\t" UNIT_STORE_NODE_NAME " = RootElement->cloneNode(true);\n"
 
 #define UNIT_SAVE_NODE_CODE	\
-	"\troot_element.appendChild("UNIT_STORE_NODE_NAME");\n" \
+	"\troot_element.appendChild(" UNIT_STORE_NODE_NAME ");\n" \
 
 #define HEADER_GET_NODE_CODE	\
-	"\tQDomNode* getAnyNode() { return &"UNIT_STORE_NODE_NAME"; };\n"
+	"\tQDomNode* getAnyNode() { return &" UNIT_STORE_NODE_NAME "; };\n"
 
 #endif
