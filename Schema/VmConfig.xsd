@@ -3607,6 +3607,7 @@ class CVmSoundOutputs;
 			<xs:element name="OnPoweroffAction" type="xs:string" minOccurs="0" default='"destroy"'/>
 			<xs:element name="OnRebootAction" type="xs:string" minOccurs="0" default='"restart"'/>
 			<xs:element name="OnCrashAction" type="xs:string" minOccurs="0" default='"preserve"'/>
+			<xs:element name="OnEfiUpdateAction" type="xs:string" minOccurs="0" default=""/>
 			<xs:element name="VmFastRebootUser" type="xs:string" minOccurs="0"/>
 			<xs:element name="VmStartAsUser" type="xs:string" minOccurs="0"/>
 			<xs:element name="VmStartAsPassword" type="xs:string" minOccurs="0"/>
