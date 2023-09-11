@@ -989,6 +989,8 @@ CDispLicense::CDispLicense(const QString&amp; key, const QString&amp; user, cons
 			<xs:element name="Sandbox" type="xs:string" minOccurs="0"/>
 			<xs:element name="BackupMode" type="BackupModeType" minOccurs="0">
 			</xs:element>
+			<xs:element name="Compression" type="xs:boolean" default="true" minOccurs="0"/>
+			<xs:element name="Tunnel" type="xs:boolean" default="true" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="MountPreferencesType">
