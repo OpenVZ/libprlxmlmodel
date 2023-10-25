@@ -865,8 +865,8 @@ void CVmCpu::getCpuLimitData(PRL_CPULIMIT_DATA_PTR cpulimit)
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Type" type="xs:integer" default="1"/>
-						<xs:element name="Version" type="xs:integer" default="3" minOccurs="0">
+						<xs:element name="Type" type="xs:integer" default="2"/>
+						<xs:element name="Version" type="xs:integer" default="0" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation/>
 								<xs:documentation source="patch on">patch:</xs:documentation>
