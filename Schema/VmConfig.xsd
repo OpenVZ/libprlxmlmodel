@@ -2525,6 +2525,7 @@ CVmIoLimit::CVmIoLimit(const PRL_IOLIMIT_TYPE&amp; type, const PRL_UINT32&amp; v
 			<xs:element name="EXT_00000007_EBX_MASK" type="xs:integer" minOccurs="0"/>
 			<xs:element name="EXT_00000007_EDX_MASK" type="xs:integer" minOccurs="0"/>
 			<xs:element name="EXT_0000000D_EAX_MASK" type="xs:integer" minOccurs="0"/>
+			<xs:element name="EXT_00000007_ECX_MASK" type="xs:integer" minOccurs="0"/>
 			<xs:element name="CpuFeaturesMaskValid" type="xs:boolean" default="false" minOccurs="0"/>
 			<xs:element name="InternalVmInfo">
 				<xs:annotation>

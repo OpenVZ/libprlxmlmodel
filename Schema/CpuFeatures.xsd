@@ -21,6 +21,7 @@
 			<xs:element name="EXT_00000007_EBX" type="xs:integer" minOccurs="0"/>
 			<xs:element name="EXT_00000007_EDX" type="xs:integer" minOccurs="0"/>
 			<xs:element name="EXT_0000000D_EAX" type="xs:integer" minOccurs="0"/>
+			<xs:element name="EXT_00000007_ECX" type="xs:integer" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CpuPoolInfoType">
